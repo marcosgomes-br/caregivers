@@ -1,0 +1,92 @@
+.page-header {
+    margin-bottom: 6.4rem;
+}
+
+.novoCuidador main {
+    background: var(--cor-branco-puro);
+    width: 100%;
+    max-width: 74rem;
+    border-radius: 0.8rem;
+    margin: -3.2rem auto 3.2rem;
+    padding-top: 6.4rem;
+    overflow: hidden;
+}
+
+.novoCuidador main fieldset {
+    border: 0;
+    padding: 0 2.4rem;
+}
+
+.novoCuidador main fieldset + fieldset {
+    margin-top: 2.4rem;
+}
+
+.novoCuidador main fieldset legend {
+    font: 700 2.4rem Archivo;
+    color: var(--cor-cinza-escuro);
+    margin-bottom: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid var(---cor-cinza-claro)
+}
+
+.novoCuidador .botao-add-horario{
+    background: none;
+    border: 0;
+    color: var(--cor-primary);
+    font: 700 1.6rem Archivo;
+    cursor: pointer;
+    transition: color 0.2s;
+    outline: none;
+}
+
+.novoCuidador main .schedule-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    column-gap: 1.6rem;
+}
+
+.novoCuidador .input-block + .input-block {
+    margin-top: 0 !important;
+}
+
+.novoCuidador main footer {
+    padding: 4rem 6.4rem;
+    background: var(--cor-branco-sujo);
+    border-top: 1px solid var(--cor-cinza);
+    margin-top: 6.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.novoCuidador main footer p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--color-text-complement);
+}
+
+.novoCuidador main footer img {
+    margin-right: 2rem;
+}
+
+.novoCuidador main footer button {
+    width: 20rem;
+    height: 5.6rem;
+    background-color: var(--color-secundary);
+    color: var(--cor-branco-puro);
+    border: 0;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font: 700 1.6rem Archivo;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    transition:  all .5s;
+    background-color: var(--cor-botao-2);
+}

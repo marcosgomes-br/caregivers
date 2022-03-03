@@ -1,0 +1,57 @@
+:root{
+    font-size: 60%;
+    --cor-primaria: #0F9393;
+    --cor-botao-1: #5F6E9B;
+    --cor-botao-2: #414B82;
+    --cor-branco-puro: #FFF;
+    --cor-branco-sujo: #FAFAFC;
+    --cor-cinza: #C2C2C2;
+    --cor-cinza-claro: #F0F0F7;
+    --cor-cinza-escuro: #0E1818;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root{
+    height: 100vh;
+}
+
+body{
+    background: var(--cor-cinza-claro);
+}
+
+#root{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body,
+input,
+button,
+textarea,
+.input{
+    font: 500 1.6rem Poppins;
+}
+
+.container{
+    width: 90%;
+    max-width: 700px;
+}
+
+
+.buttons-container a:hover, #btn-salvar:hover, .cuidador-item footer a:hover{
+    background: none !important;
+    border: 2px solid var(--cor-botao-2);
+    color: var(--cor-botao-2);
+}
+
+@media(min-width: 700px){
+    :root{
+        font-size: 62.5%;
+    }
+}
