@@ -6,7 +6,8 @@ const messages = {
                     slogan: 'A plataforma dos guardiões de idosos.',
                     btnGuardiao: 'Sou um Guardião',
                     btnFind: 'Encontrar Guardião',
-                    connections: 'conexões realizadas.'
+                    connections: 'conexões realizadas.',
+                    altHeart: 'Coração'
                 }
             }
         }

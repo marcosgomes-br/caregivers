@@ -6,7 +6,8 @@ const messages = {
                     slogan: 'The Elder Guardians Platform.',
                     btnGuardiao: "I'm a Guardian",
                     btnFind: 'Find Guardian',
-                    connections: 'connections achieved.'
+                    connections: 'connections achieved.',
+                    altHeart: 'Heart'
                 }
             }
         }
