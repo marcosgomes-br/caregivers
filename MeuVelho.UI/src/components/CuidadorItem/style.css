@@ -1,8 +1,8 @@
 .cuidador-item {
     background: var(--cor-branco-puro);
-    box-shadow: var(--cor-cinza) .2rem .2rem .2rem;
+    box-shadow: var(--cor-cinza-escuro) .1rem .2rem .5rem;
     border-radius: 0.8rem;
-    margin-top: 2.4rem;
+    margin-bottom: 2.4rem;
     overflow: hidden; 
 } 
 
@@ -58,7 +58,7 @@
 .cuidador-item footer a {
     width: 20rem;
     height: 5.6rem;
-    background: var(--cor-botao-1);
+    background: var(--cor-secundaria);
     color: var(--cor-branco-puro);
     border:0;
     border-radius: 0.8rem ;

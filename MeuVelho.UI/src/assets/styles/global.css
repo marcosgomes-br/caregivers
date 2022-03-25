@@ -1,13 +1,12 @@
 :root{
     font-size: 60%;
-    --cor-primaria: #0F9393;
-    --cor-botao-1: #5F6E9B;
-    --cor-botao-2: #414B82;
+    --cor-primaria: #1C5E54;
+    --cor-secundaria: #00A990;
     --cor-branco-puro: #FFF;
     --cor-branco-sujo: #FAFAFC;
     --cor-cinza: #C2C2C2;
-    --cor-cinza-claro: #F0F0F7;
-    --cor-cinza-escuro: #0E1818;
+    --cor-cinza-claro: #F0EEEF;
+    --cor-cinza-escuro: #565553;
 }
 
 *{
@@ -38,16 +37,8 @@ textarea,
     font: 500 1.6rem Poppins;
 }
 
-.container{
-    width: 90%;
-    max-width: 700px;
-}
-
-
 .buttons-container a:hover, #btn-salvar:hover, .cuidador-item footer a:hover{
-    background: none !important;
-    border: 2px solid var(--cor-botao-2);
-    color: var(--cor-botao-2);
+    box-shadow: none;
 }
 
 @media(min-width: 700px){

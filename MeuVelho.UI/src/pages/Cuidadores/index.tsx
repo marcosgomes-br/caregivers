@@ -12,7 +12,7 @@ function Cuidadores(){
     }, []);
 
     return (
-        <div id="page-novo-cuidador" className="container">
+        <div id="page-novo-cuidador">
             <PageHeader titulo="Estes são os cuidadores disponíveis:" />
             <main style={{marginTop: '-100px'}}>
                 {cuidadores.map((cuidador: Cuidador) => {

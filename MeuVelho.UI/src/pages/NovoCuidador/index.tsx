@@ -50,7 +50,7 @@ function NovoCuidador(){
     }
 
     return (
-        <div id="page-cuidadores-list" className="container novoCuidador">
+        <div id="page-cuidadores-list" className="novoCuidador">
           <PageHeader titulo="Que incrível que você quer cuidar de alguém!" />
             <main style={{marginTop: '-100px'}}>
               <form onSubmit={handleNovoCuidador} onKeyDown={(e) => {
