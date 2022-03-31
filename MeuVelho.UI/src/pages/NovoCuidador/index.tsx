@@ -7,6 +7,7 @@ import Textarea from '../../components/Textarea';
 import Multiselect from 'multiselect-react-dropdown';
 import api from '../../services/api';
 import './style.css';
+import { Box, Grid, TextField } from '@mui/material';
 
 const sexoMasculino = { label: 'FEMININO', value: '0' }, 
       sexoFeminino = { label: 'MASCULINO', value: '1' }, 
@@ -60,13 +61,12 @@ function NovoCuidador(){
                 }
               }}>
                 <fieldset>
-                  <legend>Seus dados</legend>
-        
+                  <legend>Nova Conta</legend>        
                     <Input
                       name="nome"
-                      label="Nome completo"
                       value={nome}
                       onChange={(e) => { setNome(e.target.value); }}
+                      placeholder="Nome Completo"
                     />
                     <Select
                       name="sexo"
@@ -113,7 +113,7 @@ function NovoCuidador(){
                         Importante! <br />
                         Preencha todos os dados
                     </p>
-                    <button id="btn-salvar" >Salvar Cadastro</button>
+                    <button id="btn-salvar" >Registrar-me</button>
                 </footer>
             </form>
         </main>
