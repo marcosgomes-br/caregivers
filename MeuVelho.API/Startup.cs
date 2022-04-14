@@ -1,4 +1,5 @@
 using MeuVelho.API.Middlewares;
+using MeuVelho.Application.Mappings;
 using MeuVelho.Application.Services;
 using MeuVelho.Infra.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using AutoMapper;
 
 namespace MeuVelho.API
 {
@@ -28,7 +30,14 @@ namespace MeuVelho.API
             services.AddScoped<ICidadeRepository, CidadeRepository>();
             services.AddScoped<IContatoService, ContatoService>();
             services.AddScoped<IContatoRepository, ContatoRepository>();
-
+            
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
+            
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

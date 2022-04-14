@@ -12,6 +12,6 @@ namespace MeuVelho.Application.DTOs
         public string Foto { get; set; }
         public string Biografia { get; set; }
         public string Whatsapp { get; set; }
-        public Guid[] CidadesAtendidas { get; set; }
+        public List<Guid> CidadesAtendidas { get; set; }
     }
 }
