@@ -4,6 +4,7 @@ using MeuVelho.Infra.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace MeuVelho.Application.Services
 {
@@ -11,9 +12,11 @@ namespace MeuVelho.Application.Services
     {
         private readonly ICuidadorRepository cuidadorRepository;
 
-        public CuidadorService(ICuidadorRepository _cuidadorRepository)
+        private readonly IMapper mapper;
+        public CuidadorService(ICuidadorRepository _cuidadorRepository, IMapper _mapper)
         {
             cuidadorRepository = _cuidadorRepository;
+            mapper = _mapper;
         }
 
         public void Desativar(Guid id)
@@ -21,14 +24,14 @@ namespace MeuVelho.Application.Services
             cuidadorRepository.Desativar(id);
         }
 
-        public async Task<List<CuidadorResponse>> Listar()
+        public async Task<List<CuidadorDTO>> Listar()
         {
-            return await cuidadorRepository.Listar();
+            return mapper.Map<List<CuidadorDTO>>(await cuidadorRepository.Listar());
         }
 
-        public async Task<CuidadorResponse> Pegar(Guid id)
+        public async Task<CuidadorDTO> Pegar(Guid id)
         {
-            return await cuidadorRepository.Pegar(id);
+            return mapper.Map<CuidadorDTO>(await cuidadorRepository.Pegar(id));
         }
 
         public async Task<Guid> Salvar(CuidadorDTO cuidador)

@@ -22,4 +22,8 @@
     <ProjectReference Include="..\MeuVelho.Domains\MeuVelho.Domains.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Data\Repositories\Cuidador\CuidadorResponse.cs" />
+  </ItemGroup>
+
 </Project>

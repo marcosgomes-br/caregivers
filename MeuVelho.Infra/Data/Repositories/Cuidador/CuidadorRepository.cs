@@ -22,37 +22,15 @@ namespace MeuVelho.Infra.Data.Repositories
             contexto.SaveChangesAsync();
         }
 
-        public async Task<List<CuidadorResponse>> Listar()
+        public async Task<List<CuidadorDomain>> Listar()
         {
-            return await contexto.Cuidadores.Select(x => new CuidadorResponse
-            {
-                Id = x.Id,
-                Nome = x.Nome,
-                Sexo = x.Sexo,
-                Foto = x.Foto,
-                Biografia = x.Biografia,
-                Whatsapp = x.Whatsapp,
-                Contatos = x.Contatos.Count,
-                Cidades = x.Cidades.Select(x => x.Nome).ToList(),
-                SituacaoCadastro = x.Ativo ? "Ativo" : "Inativo"
-            }).OrderBy(o => o.Nome).ToListAsync();
+            return await contexto.Cuidadores.Include(x => x.Cidades).OrderBy(o => o.Nome).ToListAsync();
         }
 
-        public async Task<CuidadorResponse> Pegar(Guid id)
+        public async Task<CuidadorDomain> Pegar(Guid id)
         {
             return await contexto.Cuidadores.Where(x => x.Id.Equals(id))
-                                            .Select(x => new CuidadorResponse
-                                            {
-                                                Id = x.Id,
-                                                Nome = x.Nome,
-                                                Sexo = x.Sexo,
-                                                Foto = x.Foto,
-                                                Biografia = x.Biografia,
-                                                Whatsapp = x.Whatsapp,
-                                                Contatos = x.Contatos.Count,
-                                                Cidades = x.Cidades.Select(x => x.Nome).ToList(),
-                                                SituacaoCadastro = x.Ativo ? "Ativo" : "Inativo"
-                                            })
+                                            .Include(x => x.Cidades)
                                             .FirstOrDefaultAsync();
         }
 

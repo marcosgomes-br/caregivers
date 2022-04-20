@@ -11,7 +11,7 @@ namespace MeuVelho.Application.Services
     {
         public Task<Guid> Salvar(CuidadorDTO cuidador);
         public void Desativar(Guid id);
-        public Task<CuidadorResponse> Pegar(Guid id);
-        public Task<List<CuidadorResponse>> Listar();
+        public Task<CuidadorDTO> Pegar(Guid id);
+        public Task<List<CuidadorDTO>> Listar();
     }
 }

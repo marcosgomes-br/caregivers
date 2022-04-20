@@ -8,8 +8,8 @@ namespace MeuVelho.Infra.Data.Repositories
     public interface ICuidadorRepository
     {
         public Task<CuidadorDomain> Salvar(CuidadorDomain cuidador);
-        public Task<List<CuidadorResponse>> Listar();
-        public Task<CuidadorResponse> Pegar(Guid id);
+        public Task<List<CuidadorDomain>> Listar();
+        public Task<CuidadorDomain> Pegar(Guid id);
         public void Desativar(Guid id);
     }
 }

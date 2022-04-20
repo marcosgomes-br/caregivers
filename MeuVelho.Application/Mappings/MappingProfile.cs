@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using AutoMapper;
 using MeuVelho.Application.DTOs;
@@ -23,6 +24,11 @@ namespace MeuVelho.Application.Mappings
                     Foto = x.Foto,
                     CidadesAtendidas = x.Cidades.Select(s => s.Id).ToList()
                 });
+
+            CreateMap<CidadeDomain, CidadeDTO>()
+                .ForMember(x => x.Nome, 
+                             o => 
+                                 o.MapFrom(s => $@"{s.Nome} - {s.Estado.Nome}"));
         }
     }    
 }

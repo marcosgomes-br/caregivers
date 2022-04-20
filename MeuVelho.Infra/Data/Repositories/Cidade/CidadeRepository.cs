@@ -3,20 +3,17 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MeuVelho.Domains;
 
 namespace MeuVelho.Infra.Data.Repositories
 {
     public class CidadeRepository : ICidadeRepository
     {
         private readonly MeuVelhoContext _db = new MeuVelhoContext();
-        public async Task<List<CidadeResponse>> Listar()
+        public async Task<List<CidadeDomain>> Listar()
         {
-            return await _db.Cidades.Select(x => new CidadeResponse
-                                    {
-                                        Id = x.Id,
-                                        Nome = x.Nome + " - " + x.Estado.Nome
-                                    })
-                                    .OrderBy(x => x.Nome)
+            return await _db.Cidades.OrderBy(x => x.Nome)
+                                    .Include(x => x.Estado)
                                     .ToListAsync();
         }
     }

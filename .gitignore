@@ -58,7 +58,6 @@ DocProject/Help/html
 
 # Click-Once directory
 publish/
-
 # dependencies
 /node_modules
 /.pnp
