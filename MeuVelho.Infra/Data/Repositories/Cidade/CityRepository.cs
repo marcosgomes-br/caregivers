@@ -7,7 +7,7 @@ using MeuVelho.Domains;
 
 namespace MeuVelho.Infra.Data.Repositories
 {
-    public class CidadeRepository : ICidadeRepository
+    public class CityRepository : ICityRepository
     {
         private readonly MeuVelhoContext _db = new MeuVelhoContext();
         public async Task<List<CidadeDomain>> Listar()

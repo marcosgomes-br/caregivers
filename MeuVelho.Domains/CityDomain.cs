@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace MeuVelho.Domains
 {
-    public class CidadeDomain
+    public class CityDomain
     {
-        public CidadeDomain(Guid id, string nome, Guid idEstado)
+        public CityDomain(Guid id, string nome, Guid idEstado)
         {
             Id = id;
             Nome = nome;
@@ -17,7 +17,7 @@ namespace MeuVelho.Domains
         public string Nome { get; private set; }
         public Guid IdEstado { get; private set; }
         public virtual EstadoDomain Estado { get; private set; }
-        public virtual ICollection<CuidadorDomain> Cuidadores { get; set; }
-        public virtual ICollection<CuidadorCidadeDomain> CuidadoresCidade { get; set; }
+        public virtual ICollection<CaregiverDomain> Cuidadores { get; set; }
+        public virtual ICollection<CaregiverCityDomain> CuidadoresCidade { get; set; }
     }
 }

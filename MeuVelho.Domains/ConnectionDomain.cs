@@ -2,9 +2,9 @@
 
 namespace MeuVelho.Domains
 {
-    public class ContatoDomain
+    public class ConnectionDomain
     {
-        public ContatoDomain(Guid idCuidador)
+        public ConnectionDomain(Guid idCuidador)
         {
             Id = new Guid();
             Data = DateTime.Now;
@@ -14,6 +14,6 @@ namespace MeuVelho.Domains
         public Guid Id { get; private set; }
         public DateTime Data { get; private set; }
         public Guid IdCuidador { get; private set; }
-        public virtual CuidadorDomain Cuidador { get; private set; }
+        public virtual CaregiverDomain Caregiver { get; private set; }
     }
 }

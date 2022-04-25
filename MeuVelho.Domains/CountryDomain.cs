@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace MeuVelho.Domains
 {
-    public class PaisDomain
+    public class CountryDomain
     {
-        public PaisDomain(){}
-        public PaisDomain(Guid id, string nome)
+        public CountryDomain(){}
+        public CountryDomain(Guid id, string nome)
         {
             Id = id;
             Nome = nome;
@@ -14,6 +14,6 @@ namespace MeuVelho.Domains
 
         public Guid Id { get; private set; }
         public string Nome { get; private set; }
-        public virtual ICollection<EstadoDomain> Estados { get; private set; }
+        public virtual ICollection<StateDomain> Estados { get; private set; }
     }
 }

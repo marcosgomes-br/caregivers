@@ -8,15 +8,15 @@ namespace MeuVelho.Infra.Data.Repositories
     public class ContatoRepository : IContatoRepository
     {
         private readonly MeuVelhoContext _db = new MeuVelhoContext();
-        public async Task Salvar(Guid idCuidador)
+        public async Task Save(Guid idCaregiver)
         {
-            _db.Contatos.Add(new Domains.ContatoDomain(idCuidador));
+            _db.Connections.Add(new Domains.ConnectionDomain(idCaregiver));
             await _db.SaveChangesAsync();
         }
 
-        public int Totalizar()
+        public int Count()
         {
-            return _db.Contatos.Count();
+            return _db.Connections.Count();
         }
     }
 }

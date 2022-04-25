@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace MeuVelho.API.Controllers
 {
-    [Route("api/contato")]
+    [Route("api/connection")]
     [ApiController]
-    public class ContatoController : ControllerBase
+    public class ConnectionController : ControllerBase
     {
         private readonly IContatoService contatoService;
-        public ContatoController(IContatoService _contatoService)
+        public ConnectionController(IContatoService _contatoService)
         {
             contatoService = _contatoService;
         }

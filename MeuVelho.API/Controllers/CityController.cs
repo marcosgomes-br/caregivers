@@ -6,17 +6,17 @@ namespace MeuVelho.API.Controllers
 {
     [Route("api/cidade")]
     [ApiController]
-    public class CidadeController : ControllerBase
+    public class CityController : ControllerBase
     {
-        private readonly ICidadeService cidadeService;
-        public CidadeController(ICidadeService _cidadeService)
+        private readonly ICidadeService cityService;
+        public CityController(ICidadeService cityService)
         {
-            cidadeService = _cidadeService;
+            cityService = cityService;
         }
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await cidadeService.Listar());
+            return Ok(await cityService.Get());
         }
     }
 }

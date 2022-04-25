@@ -7,11 +7,11 @@ using System.Collections.Generic;
 
 namespace MeuVelho.Application.Services
 {
-    public interface ICuidadorService
+    public interface ICaregiverService
     {
-        public Task<Guid> Salvar(CuidadorDTO cuidador);
-        public void Desativar(Guid id);
-        public Task<CuidadorDTO> Pegar(Guid id);
-        public Task<List<CuidadorDTO>> Listar();
+        public Task<Guid> Save(CaregiverDto caregiver);
+        public void Disable(Guid id);
+        public Task<CaregiverDto> Get(Guid id);
+        public Task<List<CaregiverDto>> Get();
     }
 }

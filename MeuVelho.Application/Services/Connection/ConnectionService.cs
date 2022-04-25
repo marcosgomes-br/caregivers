@@ -4,19 +4,19 @@ using System.Threading.Tasks;
 
 namespace MeuVelho.Application.Services
 {
-    public class ContatoService : IContatoService
+    public class ConnectionService : IConnectionService
     {
         private readonly IContatoRepository contatoRepository;
-        public ContatoService(IContatoRepository _contatoRepository)
+        public ConnectionService(IContatoRepository _contatoRepository)
         {
             contatoRepository = _contatoRepository;
         }
-        public async Task Salvar(Guid idCuidador)
+        public async Task Save(Guid idCuidador)
         {
             await contatoRepository.Salvar(idCuidador);
         }
 
-        public int Totalizar()
+        public int Count()
         {
             return contatoRepository.Totalizar();
         }

@@ -2,9 +2,9 @@
 
 namespace MeuVelho.Domains
 {
-    public class CuidadorCidadeDomain
+    public class CaregiverCityDomain
     {
-        public CuidadorCidadeDomain(Guid idCuidador, Guid idCidade)
+        public CaregiverCityDomain(Guid idCuidador, Guid idCidade)
         {
             IdCuidador = idCuidador;
             IdCidade = idCidade;

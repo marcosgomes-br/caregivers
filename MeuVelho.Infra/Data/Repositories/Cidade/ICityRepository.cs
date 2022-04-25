@@ -4,7 +4,7 @@ using MeuVelho.Domains;
 
 namespace MeuVelho.Infra.Data.Repositories
 {
-    public interface ICidadeRepository
+    public interface ICityRepository
     {
         public Task<List<CidadeDomain>> Listar();
     }
