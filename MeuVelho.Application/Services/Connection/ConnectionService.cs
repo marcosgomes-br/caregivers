@@ -6,19 +6,19 @@ namespace MeuVelho.Application.Services
 {
     public class ConnectionService : IConnectionService
     {
-        private readonly IContatoRepository contatoRepository;
-        public ConnectionService(IContatoRepository _contatoRepository)
+        private readonly IConnectionRepository _connectionRepository;
+        public ConnectionService(IConnectionRepository connectionRepository)
         {
-            contatoRepository = _contatoRepository;
+            _connectionRepository = connectionRepository;
         }
-        public async Task Save(Guid idCuidador)
+        public async Task Save(Guid idCaregiver)
         {
-            await contatoRepository.Salvar(idCuidador);
+            await _connectionRepository.Save(idCaregiver);
         }
 
         public int Count()
         {
-            return contatoRepository.Totalizar();
+            return _connectionRepository.Count();
         }
     }
 }

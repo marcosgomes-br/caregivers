@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MeuVelho.Infra.Data.Repositories
 {
-    public class ContatoRepository : IContatoRepository
+    public class ConnectionRepository : IConnectionRepository
     {
         private readonly MeuVelhoContext _db = new MeuVelhoContext();
         public async Task Save(Guid idCaregiver)

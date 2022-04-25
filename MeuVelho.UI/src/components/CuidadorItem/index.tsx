@@ -9,7 +9,7 @@ export interface Cuidador{
   foto: string;
   biografia: string;
   whatsapp: string;
-  cidades: string[];
+  cidadesAtendidas: any[];
   contatos: number
 }
 
@@ -26,9 +26,11 @@ const CuidadorItem: React.FC<CuidadorItemProps> =({cuidador}) =>{
       });
     }
 
-    function listarCidades(cidades: string[]){
+    function listarCidades(cidades: any[]){
+      debugger;
       let cidadesStr = '';
-      cidades.map((x, i) => {cidadesStr += i+1 === cidades.length ? x : `${x} | `} );
+      if(cidades && cidades.length > 0)
+        cidades.map((x, i) => {cidadesStr += i+1 === cidades.length ? x[1] : `${x[1]} | `} );
       return cidadesStr;
     }
 
@@ -38,7 +40,7 @@ const CuidadorItem: React.FC<CuidadorItemProps> =({cuidador}) =>{
           <img src={cuidador.foto} alt={cuidador.nome} />
           <div>
             <strong>{cuidador.nome.toUpperCase()}</strong>
-            <span>{listarCidades(cuidador.cidades)}</span>
+            <span>{listarCidades(cuidador.cidadesAtendidas)}</span>
           </div>
         </header>
     

@@ -6,37 +6,37 @@ using System.Threading.Tasks;
 
 namespace MeuVelho.API.Controllers
 {
-    [Route("api/cuidador")]
+    [Route("api/caregiver")]
     [ApiController]
-    public class CuidadorController : ControllerBase
+    public class CaregiverController : ControllerBase
     {
-        private readonly ICuidadorService cuidadorService;
-        public CuidadorController(ICuidadorService _cuidadorservice)
+        private readonly ICaregiverService _caregiverService;
+        public CaregiverController(ICaregiverService caregiverService)
         {
-            cuidadorService = _cuidadorservice;
+            _caregiverService = caregiverService;
         }
         [HttpPost]
-        public async Task<IActionResult> Post(CuidadorDTO cuidador)
+        public async Task<IActionResult> Post(CaregiverDto caregiver)
         {
-            return Created("", await cuidadorService.Salvar(cuidador));
+            return Created("", await _caregiverService.Save(caregiver));
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await cuidadorService.Listar());
+            return Ok(await _caregiverService.Get());
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:guid}")]
         public async Task<IActionResult> Get(Guid id)
         {
-            return Ok(await cuidadorService.Pegar(id));
+            return Ok(await _caregiverService.Get(id));
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:guid}")]
         public IActionResult Delete(Guid id)
         {
-            cuidadorService.Desativar(id);
+            _caregiverService.Disable(id);
             return Ok();
         }
     }

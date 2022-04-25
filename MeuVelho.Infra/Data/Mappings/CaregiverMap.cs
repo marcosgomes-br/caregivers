@@ -8,18 +8,18 @@ namespace MeuVelho.Infra.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<CaregiverDomain> builder)
         {
-            builder.ToTable("CUIDADOR");
+            builder.ToTable("CAREGIVER");
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Id).HasColumnName("ID");
-            builder.Property(x => x.FullName).HasMaxLength(150).HasColumnName("NOME").IsRequired();
-            builder.Property(x => x.Gender).HasColumnName("SEXO").IsRequired();
-            builder.Property(x => x.Photo).HasMaxLength(250).HasColumnName("FOTO").IsRequired();
-            builder.Property(x => x.Biography).HasMaxLength(1000).HasColumnName("BIOGRAFIA").IsRequired();
+            builder.Property(x => x.FullName).HasMaxLength(150).HasColumnName("FULL_NAME").IsRequired();
+            builder.Property(x => x.Gender).HasColumnName("GENDER").IsRequired();
+            builder.Property(x => x.Photo).HasMaxLength(250).HasColumnName("PHOTO").IsRequired();
+            builder.Property(x => x.Biography).HasMaxLength(1000).HasColumnName("BIOGRAPHY").IsRequired();
             builder.Property(x => x.Whatsapp).HasMaxLength(30).HasColumnName("WHATSAPP").IsRequired();
-            builder.Property(x => x.Active).HasColumnName("ATIVO").IsRequired();
-            builder.Property(x => x.RegisterIn).HasColumnName("DATA_CADASTRO").IsRequired();
-            builder.Property(x => x.DisabledIn).HasColumnName("DATA_DESATIVACAO").IsRequired(false);
+            builder.Property(x => x.Active).HasColumnName("ACTIVE").IsRequired();
+            builder.Property(x => x.RegisterIn).HasColumnName("REGISTER_IN").IsRequired();
+            builder.Property(x => x.DisabledIn).HasColumnName("DISABLED_IN").IsRequired(false);
 
             builder.HasMany(x => x.Cities).WithMany(x => x.Caregivers).UsingEntity<CaregiverCityDomain>(
                 x =>
@@ -28,10 +28,10 @@ namespace MeuVelho.Infra.Data.Mappings
                 x.HasOne(y => y.Caregiver).WithMany(y => y.CaregiversCities).HasForeignKey(y => y.IdCaregiver),
                 x =>
                 {
-                    x.ToTable("CUIDADOR_CIDADE");
+                    x.ToTable("CAREGIVER_CITY");
 
-                    x.Property(y => y.IdCaregiver).HasColumnName("ID_CUIDADOR");
-                    x.Property(y => y.IdCity).HasColumnName("ID_CIDADE");
+                    x.Property(y => y.IdCaregiver).HasColumnName("ID_CAREGIVER");
+                    x.Property(y => y.IdCity).HasColumnName("ID_CITY");
                 });
         }
     }

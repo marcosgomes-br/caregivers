@@ -9,18 +9,18 @@ namespace MeuVelho.API.Middlewares
 {
     public class ExceptionMiddleware
     {
-        private readonly RequestDelegate next;
+        private readonly RequestDelegate _next;
 
         public ExceptionMiddleware(RequestDelegate next)
         {
-            this.next = next;
+            _next = next;
         }
 
         public async Task InvokeAsync(HttpContext context )
         {
             try
             {
-                await next(context);
+                await _next(context);
             }
             catch (Exception ex)
             {
@@ -34,7 +34,7 @@ namespace MeuVelho.API.Middlewares
 
             if (exception is ValidationException) code = HttpStatusCode.BadRequest;
 
-            var result = JsonConvert.SerializeObject(new { mensagem = exception.Message });
+            var result = JsonConvert.SerializeObject(new { message = exception.Message });
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)code;
             return context.Response.WriteAsync(result);

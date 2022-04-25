@@ -14,22 +14,22 @@ namespace MeuVelho.API
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ICuidadorService, CuidadorService>();
-            services.AddScoped<ICuidadorRepository, CuidadorRepository>();
-            services.AddScoped<ICidadeService, CidadeService>();
-            services.AddScoped<ICidadeRepository, CidadeRepository>();
-            services.AddScoped<IContatoService, ContatoService>();
-            services.AddScoped<IContatoRepository, ContatoRepository>();
+            services.AddScoped<ICaregiverService, CaregiverService>();
+            services.AddScoped<ICaregiverRepository, CaregiverRepository>();
+            services.AddScoped<ICityService, CityService>();
+            services.AddScoped<ICityRepository, CityRepository>();
+            services.AddScoped<IConnectionService, ConnectionService>();
+            services.AddScoped<IConnectionRepository, ConnectionRepository>();
             
             var mapperConfig = new MapperConfiguration(mc =>
             {

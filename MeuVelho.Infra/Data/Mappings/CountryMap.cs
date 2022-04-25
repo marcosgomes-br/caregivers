@@ -9,12 +9,12 @@ namespace MeuVelho.Infra.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<CountryDomain> builder)
         {
-            builder.ToTable("PAIS");
+            builder.ToTable("COUNTRY");
 
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Id).HasColumnName("ID");
-            builder.Property(x => x.Name).HasMaxLength(20).HasColumnName("NOME");
+            builder.Property(x => x.Name).HasMaxLength(20).HasColumnName("NAME");
 
             builder.HasData(new[]
             {

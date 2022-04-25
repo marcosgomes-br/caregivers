@@ -2,14 +2,14 @@
 
 namespace MeuVelho.Domains.Validations
 {
-    public class CuidadorValidation : AbstractValidator<CuidadorDomain>
+    public class CaregiverValidation : AbstractValidator<CaregiverDomain>
     {
-        public CuidadorValidation()
+        public CaregiverValidation()
         {
-            RuleFor(x => x.Nome).NotEmpty().WithMessage("Nome é um campo obrigatório");
-            RuleFor(x => x.Nome).MaximumLength(100).WithMessage("O Nome poderá ter até 100 caracteres");
-            RuleFor(x => x.Biografia).MaximumLength(1000).WithMessage("A Biografia poderá ter até 1000 caracteres");
-            RuleFor(x => x.Whatsapp).NotEmpty().WithMessage("Whatsapp é um campo obrigatório");
+            RuleFor(x => x.FullName).NotEmpty().WithMessage("Name is required");
+            RuleFor(x => x.FullName).MaximumLength(100).WithMessage("Full Name may have max  100 characters");
+            RuleFor(x => x.Biography).MaximumLength(1000).WithMessage("The Biography may have max 1000 characters");
+            RuleFor(x => x.Whatsapp).NotEmpty().WithMessage("Whatsapp is required");
         }
     }
 }

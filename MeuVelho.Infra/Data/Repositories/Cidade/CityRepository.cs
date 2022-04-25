@@ -10,10 +10,10 @@ namespace MeuVelho.Infra.Data.Repositories
     public class CityRepository : ICityRepository
     {
         private readonly MeuVelhoContext _db = new MeuVelhoContext();
-        public async Task<List<CidadeDomain>> Listar()
+        public async Task<List<CityDomain>> Get()
         {
-            return await _db.Cidades.OrderBy(x => x.Nome)
-                                    .Include(x => x.Estado)
+            return await _db.Cities.OrderBy(x => x.Name)
+                                    .Include(x => x.State)
                                     .ToListAsync();
         }
     }

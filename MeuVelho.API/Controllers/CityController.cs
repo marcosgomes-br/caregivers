@@ -4,19 +4,19 @@ using System.Threading.Tasks;
 
 namespace MeuVelho.API.Controllers
 {
-    [Route("api/cidade")]
+    [Route("api/city")]
     [ApiController]
     public class CityController : ControllerBase
     {
-        private readonly ICidadeService cityService;
-        public CityController(ICidadeService cityService)
+        private readonly ICityService _cityService;
+        public CityController(ICityService cityService)
         {
-            cityService = cityService;
+            _cityService = cityService;
         }
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await cityService.Get());
+            return Ok(await _cityService.Get());
         }
     }
 }

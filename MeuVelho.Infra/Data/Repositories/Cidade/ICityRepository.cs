@@ -6,6 +6,6 @@ namespace MeuVelho.Infra.Data.Repositories
 {
     public interface ICityRepository
     {
-        public Task<List<CidadeDomain>> Listar();
+        public Task<List<CityDomain>> Get();
     }
 }

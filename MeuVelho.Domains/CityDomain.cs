@@ -6,18 +6,18 @@ namespace MeuVelho.Domains
 {
     public class CityDomain
     {
-        public CityDomain(Guid id, string nome, Guid idEstado)
+        public CityDomain(Guid id, string name, Guid idState)
         {
             Id = id;
-            Nome = nome;
-            IdEstado = idEstado;
+            Name = name;
+            IdState = idState;
         }
 
         public Guid Id { get; private set; }
-        public string Nome { get; private set; }
-        public Guid IdEstado { get; private set; }
-        public virtual EstadoDomain Estado { get; private set; }
-        public virtual ICollection<CaregiverDomain> Cuidadores { get; set; }
-        public virtual ICollection<CaregiverCityDomain> CuidadoresCidade { get; set; }
+        public string Name { get; private set; }
+        public Guid IdState { get; private set; }
+        public StateDomain State { get; private set; }
+        public ICollection<CaregiverDomain> Caregivers { get; set; }
+        public ICollection<CaregiverCityDomain> CaregiversCities { get; set; }
     }
 }

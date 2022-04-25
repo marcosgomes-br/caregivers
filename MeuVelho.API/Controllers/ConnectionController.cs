@@ -9,28 +9,22 @@ namespace MeuVelho.API.Controllers
     [ApiController]
     public class ConnectionController : ControllerBase
     {
-        private readonly IContatoService contatoService;
-        public ConnectionController(IContatoService _contatoService)
+        private readonly IConnectionService _connectionService;
+        public ConnectionController(IConnectionService connectionService)
         {
-            contatoService = _contatoService;
+            _connectionService = connectionService;
         }
         [HttpPost]
-        public async Task<IActionResult> Post(contatoDTO contato)
+        public async Task<IActionResult> Post(Guid idCaregiver)
         {
-            await contatoService.Salvar(contato.IdCuidador);
+            await _connectionService.Save(idCaregiver);
             return Ok();
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(contatoService.Totalizar());
-        }
-
-        public class contatoDTO
-        {
-            public Guid IdCuidador { get; set; }
-            public string TextoAleatorio { get; set; }
+            return Ok(_connectionService.Count());
         }
     }
 }

@@ -11,37 +11,40 @@ namespace MeuVelho.Application.Services
 {
     public class CaregiverService : ICaregiverService
     {
-        private readonly ICuidadorRepository cuidadorRepository;
+        private readonly ICaregiverRepository _caregiverRepository;
 
-        private readonly IMapper mapper;
-        public CaregiverService(ICuidadorRepository _cuidadorRepository, IMapper _mapper)
+        private readonly IMapper _mapper;
+        public CaregiverService(ICaregiverRepository caregiverRepository, IMapper mapper)
         {
-            cuidadorRepository = _cuidadorRepository;
-            mapper = _mapper;
+            _caregiverRepository = caregiverRepository;
+            _mapper = mapper;
         }
 
         public void Disable(Guid id)
         {
-            cuidadorRepository.Desativar(id);
+            _caregiverRepository.Disable(id);
         }
 
         public async Task<List<CaregiverDto>> Get()
         {
-            return mapper.Map<List<CaregiverDto>>(await cuidadorRepository.Listar());
+            return _mapper.Map<List<CaregiverDto>>(await _caregiverRepository.Get());
         }
 
         public async Task<CaregiverDto> Get(Guid id)
         {
-            return mapper.Map<CaregiverDto>(await cuidadorRepository.Pegar(id));
+            return _mapper.Map<CaregiverDto>(await _caregiverRepository.Get(id));
         }
 
         public async Task<Guid> Save(CaregiverDto caregiver)
         {
             //var domain = mapper.Map<CuidadorDomain>(cuidador); 
-            var domain = new CuidadorDomain(caregiver.Id, caregiver.FullName, caregiver.Gender, caregiver.Photo, caregiver.Biography, caregiver.Whatsapp);
-            domain.CuidadoresCidade = caregiver.CitiesServed.Select(x => new CuidadorCidadeDomain(caregiver.Id, x.Id))
-                                                               .ToList();
-            await cuidadorRepository.Salvar(domain);
+            var domain = new CaregiverDomain(caregiver.Id, caregiver.FullName, caregiver.Gender, 
+                                        caregiver.Photo, caregiver.Biography, caregiver.Whatsapp)
+                {
+                    CaregiversCities = caregiver.CitiesServed.Select(x => new CaregiverCityDomain(caregiver.Id, x.Id))
+                        .ToList()
+                };
+            await _caregiverRepository.Save(domain);
             return domain.Id;
         }
     }

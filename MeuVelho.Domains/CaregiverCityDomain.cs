@@ -4,15 +4,15 @@ namespace MeuVelho.Domains
 {
     public class CaregiverCityDomain
     {
-        public CaregiverCityDomain(Guid idCuidador, Guid idCidade)
+        public CaregiverCityDomain(Guid idCaregiver, Guid idCity)
         {
-            IdCuidador = idCuidador;
-            IdCidade = idCidade;
+            IdCaregiver = idCaregiver;
+            IdCity = idCity;
         }
 
-        public Guid IdCuidador { get; private set; }
-        public Guid IdCidade { get; private set; }
-        public virtual CuidadorDomain Cuidador { get; set; }
-        public virtual CidadeDomain Cidade { get; set; }
+        public Guid IdCaregiver { get; private set; }
+        public Guid IdCity { get; private set; }
+        public CaregiverDomain Caregiver { get; set; }
+        public CityDomain City { get; set; }
     }
 }

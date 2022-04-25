@@ -6,14 +6,14 @@ namespace MeuVelho.Domains
     public class CountryDomain
     {
         public CountryDomain(){}
-        public CountryDomain(Guid id, string nome)
+        public CountryDomain(Guid id, string name)
         {
             Id = id;
-            Nome = nome;
+            Name = name;
         }
 
         public Guid Id { get; private set; }
-        public string Nome { get; private set; }
-        public virtual ICollection<StateDomain> Estados { get; private set; }
+        public string Name { get; private set; }
+        public virtual ICollection<StateDomain> States { get; private set; }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using MeuVelho.Application.DTOs;
@@ -10,25 +11,29 @@ namespace MeuVelho.Application.Mappings
     {
         public MappingProfile()
         {
-            CreateMap<CuidadorDTO, CuidadorDomain>()
-                .ConstructUsing(x => new CuidadorDomain(x.Id, x.Nome, x.Sexo, x.Foto, x.Biografia, x.Whatsapp));
+            CreateMap<CaregiverDto, CaregiverDomain>()
+                .ConstructUsing(x => new CaregiverDomain(x.Id, x.FullName, x.Gender, x.Photo, x.Biography, x.Whatsapp));
 
-            CreateMap<CuidadorDomain, CuidadorDTO>()
-                .ConstructUsing(x => new CuidadorDTO
+            CreateMap<CaregiverDomain, CaregiverDto>()
+                .ConstructUsing(x => new CaregiverDto
                 {
                     Id = x.Id,
-                    Nome = x.Nome,
-                    Sexo = x.Sexo,
-                    Biografia = x.Biografia,
+                    FullName = x.FullName,
+                    Gender = x.Gender,
+                    Biography = x.Biography,
                     Whatsapp = x.Whatsapp,
-                    Foto = x.Foto,
-                    CidadesAtendidas = x.Cidades.Select(s => s.Id).ToList()
+                    Photo = x.Photo,
+                    CitiesServed = x.Cities.Select(s => new CityDto
+                                                {
+                                                    Id = s.Id, Name = s.Name
+                                                })
+                                                .ToList()
                 });
 
-            CreateMap<CidadeDomain, CidadeDTO>()
-                .ForMember(x => x.Nome, 
+            CreateMap<CityDomain, CityDto>()
+                .ForMember(x => x.Name, 
                              o => 
-                                 o.MapFrom(s => $@"{s.Nome} - {s.Estado.Nome}"));
+                                 o.MapFrom(s => $@"{s.Name} - {s.State.Name}"));
         }
     }    
 }

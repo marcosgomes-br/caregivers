@@ -11,37 +11,37 @@ namespace MeuVelho.Infra.Data.Repositories
 {
     public class CaregiverRepository : ICaregiverRepository
     {
-        private readonly MeuVelhoContext contexto = new MeuVelhoContext();
+        private readonly MeuVelhoContext _context = new MeuVelhoContext();
 
-        public void Desativar(Guid id)
+        public void Disable(Guid id)
         {
-            var cuidador = contexto.Caregivers.AsTracking().Where(x => x.Id.Equals(id)).FirstOrDefault();
-            if (cuidador == null)
-                throw new ValidationException("Falha ao desativar colaborador, cadastro inexistente.");
-            cuidador.Disable();
-            contexto.SaveChangesAsync();
+            var caregiver = _context.Caregivers.AsTracking().FirstOrDefault(x => x.Id.Equals(id));
+            if (caregiver == null)
+                throw new ValidationException("Failed to deactivate, non-existent registration.");
+            caregiver.Disable();
+            _context.SaveChangesAsync();
         }
 
         public async Task<List<CaregiverDomain>> Get()
         {
-            return await contexto.Caregivers.Include(x => x.Cities).OrderBy(o => o.FullName).ToListAsync();
+            return await _context.Caregivers.Include(x => x.Cities).OrderBy(o => o.FullName).ToListAsync();
         }
 
         public async Task<CaregiverDomain> Get(Guid id)
         {
-            return await contexto.Caregivers.Where(x => x.Id.Equals(id))
+            return await _context.Caregivers.Where(x => x.Id.Equals(id))
                                             .Include(x => x.Cities)
                                             .FirstOrDefaultAsync();
         }
 
-        public async Task<CaregiverDomain> Salvar(CaregiverDomain caregiver)
+        public async Task<CaregiverDomain> Save(CaregiverDomain caregiver)
         {
-            var existeNoBanco = contexto.Caregivers.Any(x => x.Id == caregiver.Id);
-            if (existeNoBanco)
-                contexto.Update(caregiver);
+            var anyRegister = _context.Caregivers.Any(x => x.Id == caregiver.Id);
+            if (anyRegister)
+                _context.Update(caregiver);
             else
-                contexto.Caregivers.Add(caregiver);
-            await contexto.SaveChangesAsync();
+                _context.Caregivers.Add(caregiver);
+            await _context.SaveChangesAsync();
             return caregiver;
         }
     }

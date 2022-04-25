@@ -3,7 +3,7 @@ using Xunit;
 
 namespace MeuVelho.Tests.Unit
 {
-    public class CuidadorTest
+    public class CaregiverTest
     {
         [Fact]
         public void Test1()

@@ -5,17 +5,17 @@ namespace MeuVelho.Domains
 {
     public class StateDomain
     {
-        public StateDomain(Guid id, string nome, Guid idPais)
+        public StateDomain(Guid id, string name, Guid idCountry)
         {
             Id = id;
-            Nome = nome;
-            IdPais = idPais;
+            Name = name;
+            IdCountry = idCountry;
         }
 
         public Guid Id { get; private set; }
-        public string Nome { get; private set; }
-        public Guid IdPais { get; private set; }
-        public virtual PaisDomain Pais { get; private set; }
-        public ICollection<CityDomain> Cidades { get; private set; }
+        public string Name { get; private set; }
+        public Guid IdCountry { get; private set; }
+        public CountryDomain Country { get; private set; }
+        public ICollection<CityDomain> Cities { get; private set; }
     }
 }

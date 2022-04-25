@@ -5,7 +5,7 @@ namespace MeuVelho.Application.Services
 {
     public interface IConnectionService
     {
-        public Task Save(Guid idCuidador);
+        public Task Save(Guid idCaregiver);
         public int Count();
     }
 }

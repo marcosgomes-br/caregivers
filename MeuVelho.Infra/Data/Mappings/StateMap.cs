@@ -9,13 +9,13 @@ namespace MeuVelho.Infra.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<StateDomain> builder)
         {
-            builder.ToTable("ESTADO");
+            builder.ToTable("STATE");
 
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Id).HasColumnName("ID");
-            builder.Property(x => x.Name).HasColumnName("NOME").HasMaxLength(30).IsRequired();
-            builder.Property(x => x.IdCountry).HasColumnName("ID_PAIS").IsRequired();
+            builder.Property(x => x.Name).HasColumnName("NAME").HasMaxLength(30).IsRequired();
+            builder.Property(x => x.IdCountry).HasColumnName("ID_COUNTRY").IsRequired();
 
             builder.HasOne(x => x.Country).WithMany(x => x.States).HasForeignKey(x => x.IdCountry).OnDelete(DeleteBehavior.Cascade);
 

@@ -8,26 +8,26 @@ namespace MeuVelho.Infra.Data.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            const string strConexao = @"Host=localhost;Username=postgres;Pooling=true;Password=meu@Velho22;Database=meu_velho";
+            const string strConnection = @"Host=localhost;Username=postgres;Pooling=true;Password=meu@Velho22;Database=meu_velho";
 
             optionsBuilder
-                .UseNpgsql(strConexao)
+                .UseNpgsql(strConnection)
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new CuidadorMap());
-            modelBuilder.ApplyConfiguration(new PaisMap());
-            modelBuilder.ApplyConfiguration(new EstadoMap());
-            modelBuilder.ApplyConfiguration(new CidadeMap());
-            modelBuilder.ApplyConfiguration(new ContatoMap());
+            modelBuilder.ApplyConfiguration(new CaregiverMap());
+            modelBuilder.ApplyConfiguration(new CountryMap());
+            modelBuilder.ApplyConfiguration(new StateMap());
+            modelBuilder.ApplyConfiguration(new CityMap());
+            modelBuilder.ApplyConfiguration(new ConnectionMap());
         }
 
-        public DbSet<PaisDomain> Paises { get; set; }
-        public DbSet<EstadoDomain> Estados { get; set; }
-        public DbSet<CidadeDomain> Cidades { get; set; }
-        public DbSet<CuidadorDomain> Cuidadores { get; set; }
-        public DbSet<ContatoDomain> Contatos { get; set; }
+        public DbSet<CountryDomain> Countries { get; set; }
+        public DbSet<StateDomain> States { get; set; }
+        public DbSet<CityDomain> Cities { get; set; }
+        public DbSet<CaregiverDomain> Caregivers { get; set; }
+        public DbSet<ConnectionDomain> Connections { get; set; }
     }
 }

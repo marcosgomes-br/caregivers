@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace MeuVelho.Domains.Enums
 {
-    public class MeuVelhoEnums
+    public static class MeuVelhoEnums
     {
-        public enum Sexo
+        public enum Gender
         {
-            Feminino,
-            Masculino,
-            Outro
+            Female,
+            Male,
+            Other
         }
     }
 }
