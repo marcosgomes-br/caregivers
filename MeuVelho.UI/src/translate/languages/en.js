@@ -3,9 +3,9 @@ const messages = {
         translations: {
             page: {
                 home: {
-                    slogan: 'The Elder Guardians Platform.',
-                    btnGuardiao: "I'm a Guardian",
-                    btnFind: 'Find Guardian',
+                    slogan: 'The Seniors Caregivers Platform.',
+                    btnGuardiao: "I'm a Caregiver",
+                    btnFind: 'Find Caregivers',
                     connections: 'connections achieved.',
                     altHeart: 'Heart'
                 }
