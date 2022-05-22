@@ -1,6 +1,9 @@
-namespace MeuVelho.Domains.Identity
+using System;
+using Microsoft.AspNetCore.Identity;
+
+namespace MeuVelho.Domains
 {
-    public class UserDomain
+    public class UserDomain : IdentityUser<Guid>
     {
         
     }

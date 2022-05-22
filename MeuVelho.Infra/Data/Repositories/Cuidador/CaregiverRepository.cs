@@ -11,7 +11,12 @@ namespace MeuVelho.Infra.Data.Repositories
 {
     public class CaregiverRepository : ICaregiverRepository
     {
-        private readonly MeuVelhoContext _context = new MeuVelhoContext();
+        private readonly MeuVelhoContext _context;
+
+        public CaregiverRepository(MeuVelhoContext context)
+        {
+            _context = context;
+        }
 
         public void Disable(Guid id)
         {

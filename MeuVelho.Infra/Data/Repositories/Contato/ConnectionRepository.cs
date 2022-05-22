@@ -7,16 +7,21 @@ namespace MeuVelho.Infra.Data.Repositories
 {
     public class ConnectionRepository : IConnectionRepository
     {
-        private readonly MeuVelhoContext _db = new MeuVelhoContext();
+        private readonly MeuVelhoContext _context;
+
+        public ConnectionRepository(MeuVelhoContext context)
+        {
+            _context = context;
+        }
         public async Task Save(Guid idCaregiver)
         {
-            _db.Connections.Add(new Domains.ConnectionDomain(idCaregiver));
-            await _db.SaveChangesAsync();
+            _context.Connections.Add(new Domains.ConnectionDomain(idCaregiver));
+            await _context.SaveChangesAsync();
         }
 
         public int Count()
         {
-            return _db.Connections.Count();
+            return _context.Connections.Count();
         }
     }
 }

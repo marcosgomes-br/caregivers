@@ -1,3 +1,4 @@
+using System;
 using MeuVelho.API.Middlewares;
 using MeuVelho.Application.Mappings;
 using MeuVelho.Application.Services;
@@ -9,6 +10,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using AutoMapper;
+using MeuVelho.Domains;
+using MeuVelho.Infra.Data.Contexts;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
+// ReSharper disable All
 
 namespace MeuVelho.API
 {
@@ -24,6 +31,13 @@ namespace MeuVelho.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<MeuVelhoContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"))
+                    .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+
+            services.AddIdentity<UserDomain, RoleDomain>()
+                .AddEntityFrameworkStores<MeuVelhoContext>()
+                .AddDefaultTokenProviders();
+            
             services.AddScoped<ICaregiverService, CaregiverService>();
             services.AddScoped<ICaregiverRepository, CaregiverRepository>();
             services.AddScoped<ICityService, CityService>();
