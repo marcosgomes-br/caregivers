@@ -1,0 +1,38 @@
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using MeuVelho.Application.DTOs;
+using MeuVelho.Domains;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+
+namespace MeuVelho.Application.Helpers
+{
+    public static class TokenHelper
+    {
+        public static TokenDto Generate(UserDomain user, IConfiguration configuration)
+        {
+            var claims = new[]
+            {
+                new Claim("userId", user.Id.ToString()),
+                new Claim("user", user.Email),
+                new Claim("jwt", Guid.NewGuid().ToString())
+            };
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Token:key"]));
+            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var expiration = DateTime.UtcNow.AddHours(1);
+            var token = new JwtSecurityToken(
+                issuer: null,
+                audience: null,
+                claims: claims,
+                expires: expiration,
+                signingCredentials: credentials);
+            return new TokenDto
+            {
+                token = new JwtSecurityTokenHandler().WriteToken(token),
+                expiration = expiration
+            };
+        }
+    }
+}
