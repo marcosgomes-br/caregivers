@@ -12,20 +12,9 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.17" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.10" />
     <PackageReference Include="Microsoft.Identity.Web" Version="1.24.1" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="Helpers\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Remove="Helpers\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Helpers\**" />
-  </ItemGroup>
-
 </Project>

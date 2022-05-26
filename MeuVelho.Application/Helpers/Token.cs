@@ -9,7 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace MeuVelho.Application.Helpers
 {
-    public static class TokenHelper
+    public static class Token
     {
         public static TokenDto Generate(UserDomain user, IConfiguration configuration)
         {

@@ -2,11 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MeuVelho.API.Controllers
 {
     [Route("api/connection")]
     [ApiController]
+    [AllowAnonymous]
     public class ConnectionController : ControllerBase
     {
         private readonly IConnectionService _connectionService;

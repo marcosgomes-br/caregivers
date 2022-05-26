@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using MeuVelho.API.Middlewares;
 using MeuVelho.Application.Mappings;
 using MeuVelho.Application.Services;
@@ -10,10 +11,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using AutoMapper;
+using MeuVelho.Application.Services.Identity;
 using MeuVelho.Domains;
 using MeuVelho.Infra.Data.Contexts;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 // ReSharper disable All
 
@@ -44,6 +48,7 @@ namespace MeuVelho.API
             services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<IConnectionService, ConnectionService>();
             services.AddScoped<IConnectionRepository, ConnectionRepository>();
+            services.AddScoped<IIdentityService, IdentityService>();
             
             var mapperConfig = new MapperConfiguration(mc =>
             {
@@ -56,10 +61,47 @@ namespace MeuVelho.API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MeuVelho.API", Version = "v1" });
+                
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = @"JWT Authorization header using the Bearer scheme.
+                   \r\n\r\n Enter 'Bearer'[space] and then your token in the text input below.
+                    \r\n\r\nExample: \'Bearer 12345abcdef\'",
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] {}
+                    }
+                });
             });
 
             services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
+            
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Token:key"])),
+                    ClockSkew = TimeSpan.Zero
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -80,6 +122,7 @@ namespace MeuVelho.API
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

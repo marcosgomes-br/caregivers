@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using MeuVelho.Application.Services.Identity;
-using MeuVelho.Domains;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeuVelho.API.Controllers
@@ -16,9 +16,9 @@ namespace MeuVelho.API.Controllers
             _identityService = identityService;
         }
         [HttpPost("create")]
-        public async Task<IActionResult> Create(UserDomain user)
+        public async Task<IActionResult> Create(string email, string password, string phoneNumber)
         {
-            return Ok(await _identityService.Create(user));
+            return Ok(await _identityService.Create(email, password, phoneNumber));
         }
 
         [HttpPut("change-password")]
@@ -35,6 +35,7 @@ namespace MeuVelho.API.Controllers
         }
 
         [HttpPost("logout")]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         public async Task<IActionResult> LogOut()
         {
             await _identityService.LogOut();
