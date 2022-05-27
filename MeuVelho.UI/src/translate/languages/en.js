@@ -8,6 +8,23 @@ const messages = {
                     btnFind: 'Find Caregivers',
                     connections: 'connections achieved.',
                     altHeart: 'Heart'
+                },
+                caregiver: {
+                    title: 'How amazing that you want to take care of someone!',
+                    newAccount: 'New Account',
+                    form: {
+                        email: 'Email',
+                        phoneNumber: 'Phone Number',
+                        password: 'Password',
+                        confirmPassword: 'Confirm Password',
+                        validations: {
+
+                        }
+                    },
+                    button: {
+                        login: 'Log in',
+                        registerMe: 'Register me'
+                    }
                 }
             }
         }

@@ -12,6 +12,7 @@ import Button from './components/button';
 
 const alterLanguage = (currentLanguage: string): void => {
   window.localStorage.setItem('i18nextLng', currentLanguage);
+  // eslint-disable-next-line no-self-assign
   window.location = window.location;
 }
 

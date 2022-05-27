@@ -15,6 +15,7 @@
 .novoCuidador main fieldset {
     border: 0;
     padding: 0 2.4rem;
+    margin-bottom: 2.4rem;
 }
 
 .novoCuidador main fieldset + fieldset {
@@ -29,7 +30,6 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding-bottom: 1.6rem;
     border-bottom: 1px solid var(---cor-cinza-claro)
 }
 
@@ -54,31 +54,22 @@
 }
 
 .novoCuidador main footer {
-    padding: 4rem 6.4rem;
+    padding: 2rem 2.4rem 0 2.4rem;
     background: var(--cor-branco-sujo);
     border-top: 1px solid var(--cor-cinza);
-    margin-top: 6.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .novoCuidador main footer p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
     font-size: 1.4rem;
     line-height: 2.4rem;
-    color: var(--color-text-complement);
-}
-
-.novoCuidador main footer img {
-    margin-right: 2rem;
+    color: #D22323;    
 }
 
 .novoCuidador main footer button {
-    width: 20rem;
-    height: 5.6rem;
+    width: 15rem;
+    height: 4.6rem;
+    float: right;
     background-color: var(--color-secundary);
     color: var(--cor-branco-puro);
     border: 0;

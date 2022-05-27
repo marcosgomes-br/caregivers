@@ -1,47 +1,26 @@
-import React, { useState, FormEvent, useEffect } from 'react';
+import React, { useState, FormEvent } from 'react';
 import PageHeader from '../../components/PageHeader';
-import Select from '../../components/Select';
-import warningIcon from '../../assets/images/warning.svg';
+import { i18n } from '../../translate/i18n';
 import Input from '../../components/Input';
-import Textarea from '../../components/Textarea';
-import Multiselect from 'multiselect-react-dropdown';
 import api from '../../services/api';
 import './style.css';
-import { Box, Grid, TextField } from '@mui/material';
+import { Button } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignIn } from '@fortawesome/free-solid-svg-icons';
 
-const sexoMasculino = { label: 'FEMININO', value: '0' }, 
-      sexoFeminino = { label: 'MASCULINO', value: '1' }, 
-      sexoOutro = { label: 'PREFIRO NÃO INFORMAR', value: '2' };
-
-interface Iopcoes {
-  nome: string,
-  id: number,
+interface IUser{
+  email: string,
+  password: string,
+  confirmPassword: string,
+  phoneNumber: string
 }
 
-function NovoCuidador(){
-    const [cidades, setCidades] = useState<Iopcoes[]>([]);
-    const [nome, setNome] = useState('');
-    const [sexo, setSexo] = useState('');
-    const [foto, setFoto] = useState('');
-    const [biografia, setBiografia] = useState('');
-    const [whatsapp, setWhatsapp] = useState('');  
-    const [cidadesAtendidas, setCidadesAtendidas] = useState<Iopcoes[]>([]);
-
-    useEffect(() => {
-      api.get('cidade').then(response => {setCidades(response.data)});
-    }, []);
-
-    function handleNovoCuidador(e: FormEvent){
+const NovoCuidador = () => {
+  const [user, setUser] = useState<IUser>({} as IUser);
+    const handleNovoCuidador = (e: FormEvent) => {
       e.preventDefault();
       
-      api.post('cuidador', {
-        nome,
-        sexo: parseInt(sexo),
-        foto,
-        biografia,
-        whatsapp,
-        cidadesAtendidas: cidadesAtendidas.map(x => x.id)
-      })
+      api.post('auth/create', user)
       .then(() => {
         alert("cadastro realizado com sucesso!");
       })
@@ -52,16 +31,81 @@ function NovoCuidador(){
 
     return (
         <div id="page-cuidadores-list" className="novoCuidador">
-          <PageHeader titulo="Que incrível que você quer cuidar de alguém!" />
+          <PageHeader titulo={i18n.t('page.caregiver.title')} />
             <main style={{marginTop: '-100px'}}>
               <form onSubmit={handleNovoCuidador} onKeyDown={(e) => {
-                if (e.keyCode == 13) {             
+                if (e.keyCode === 13) {             
                   e.preventDefault();
                   return false;
                 }
               }}>
                 <fieldset>
-                  <legend>Nova Conta</legend>        
+                  <legend>
+                    {i18n.t('page.caregiver.newAccount')}
+                    <Button 
+                      variant="contained" 
+                      color="inherit" 
+                      size="large" 
+                      style={{
+                        background: 'none', 
+                        color: '#00A990', 
+                        border: '2px solid #00A990'
+                      }}
+                    >
+                      <FontAwesomeIcon icon={faSignIn} style={{paddingRight: '.5rem'}} /> 
+                      {i18n.t('page.caregiver.button.login')}
+                    </Button>  
+                  </legend>      
+                  <Input                     
+                    name="email"
+                    type="email"
+                    value={user.email}
+                    required
+                    onChange={(e) => { setUser({...user, email: e.target.value }) }}
+                    placeholder={i18n.t('page.caregiver.form.email')}
+                  />
+                  <Input                     
+                    name="phone"
+                    type="tel"
+                    value={user.phoneNumber}
+                    required
+                    onChange={(e) => { setUser({...user, phoneNumber: e.target.value }) }}
+                    placeholder={i18n.t('page.caregiver.form.phoneNumber')}
+                  />
+                  <Input                     
+                    name="password"
+                    type="password"
+                    value={user.password}
+                    required
+                    onChange={(e) => { setUser({...user, password: e.target.value }) }}
+                    placeholder={i18n.t('page.caregiver.form.password')}
+                  />
+                  <Input                     
+                    name="confirm-password"
+                    type="password"
+                    value={user.confirmPassword}
+                    required
+                    onChange={(e) => { setUser({...user, confirmPassword: e.target.value }) }}
+                    placeholder={i18n.t('page.caregiver.form.confirmPassword')}
+                  />
+                </fieldset>
+                <footer>
+                  { (user.password !== user.confirmPassword && user.confirmPassword) &&
+                    <p>
+                      As senhas não são iguais. Tente novamente.
+                    </p>
+                  }
+                    <button id="btn-salvar">{i18n.t('page.caregiver.button.registerMe')}</button>
+                </footer>
+            </form>
+        </main>
+     </div>
+    )
+}
+
+export default NovoCuidador;
+
+/*
                     <Input
                       name="nome"
                       value={nome}
@@ -104,21 +148,6 @@ function NovoCuidador(){
                         displayValue="nome"
                         placeholder=''                        
                         className='input' 
-                        emptyRecordMsg={ cidades.length == 0 ? 'Carregando...' : 'Não há registros'}                       
+                        emptyRecordMsg={ cidades.length === 0 ? 'Carregando...' : 'Não há registros'}                       
                       />    
-                </fieldset>
-                <footer>
-                    <p>
-                        <img src={warningIcon} alt="Aviso Importante" />
-                        Importante! <br />
-                        Preencha todos os dados
-                    </p>
-                    <button id="btn-salvar" >Registrar-me</button>
-                </footer>
-            </form>
-        </main>
-     </div>
-    )
-}
-
-export default NovoCuidador;
+*/

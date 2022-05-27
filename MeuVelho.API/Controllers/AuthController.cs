@@ -16,9 +16,9 @@ namespace MeuVelho.API.Controllers
             _identityService = identityService;
         }
         [HttpPost("create")]
-        public async Task<IActionResult> Create(string email, string password, string phoneNumber)
+        public async Task<IActionResult> Create([FromBody]UserDto user)
         {
-            return Ok(await _identityService.Create(email, password, phoneNumber));
+            return Ok(await _identityService.Create(user.Email, user.Password, user.PhoneNumber));
         }
 
         [HttpPut("change-password")]
@@ -41,5 +41,11 @@ namespace MeuVelho.API.Controllers
             await _identityService.LogOut();
             return Ok();
         }
+    }
+    public class UserDto
+    {
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Password { get; set; }
     }
 }
