@@ -18,7 +18,7 @@ const messages = {
                         password: 'Password',
                         confirmPassword: 'Confirm Password',
                         validations: {
-
+                            passwordNotSame: 'The passwords entered are not the same.'
                         }
                     },
                     button: {

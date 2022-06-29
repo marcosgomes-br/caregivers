@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PageHeader from '../../components/PageHeader';
 import './style.css';
-import CuidadorItem, { Cuidador } from '../../components/CuidadorItem';
+import CardCaregiver, { Caregiver } from '../../components/CardCaregiver';
 import api from '../../services/api';
 
 function Cuidadores(){  
@@ -15,8 +15,8 @@ function Cuidadores(){
         <div id="page-novo-cuidador">
             <PageHeader titulo="Estes são os cuidadores disponíveis:" />
             <main style={{marginTop: '-100px'}}>
-                {cuidadores.map((cuidador: Cuidador) => {
-                    return <CuidadorItem key={cuidador.id} cuidador={cuidador}/>
+                {cuidadores.map((cuidador: Caregiver) => {
+                    return <CardCaregiver key={cuidador.id} cuidador={cuidador}/>
                 })}
             </main>
         </div>

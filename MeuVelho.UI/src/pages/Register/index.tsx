@@ -15,9 +15,9 @@ interface IUser{
   phoneNumber: string
 }
 
-const NovoCuidador = () => {
+const Register = () => {
   const [user, setUser] = useState<IUser>({} as IUser);
-    const handleNovoCuidador = (e: FormEvent) => {
+    const handleNewUser = (e: FormEvent) => {
       e.preventDefault();
       
       api.post('auth/create', user)
@@ -33,7 +33,7 @@ const NovoCuidador = () => {
         <div id="page-cuidadores-list" className="novoCuidador">
           <PageHeader titulo={i18n.t('page.caregiver.title')} />
             <main style={{marginTop: '-100px'}}>
-              <form onSubmit={handleNovoCuidador} onKeyDown={(e) => {
+              <form onSubmit={handleNewUser} onKeyDown={(e) => {
                 if (e.keyCode === 13) {             
                   e.preventDefault();
                   return false;
@@ -92,7 +92,7 @@ const NovoCuidador = () => {
                 <footer>
                   { (user.password !== user.confirmPassword && user.confirmPassword) &&
                     <p>
-                      As senhas não são iguais. Tente novamente.
+                      {i18n.t('page.caregiver.form.validation.passwordNotSame')}
                     </p>
                   }
                     <button id="btn-salvar">{i18n.t('page.caregiver.button.registerMe')}</button>
@@ -103,51 +103,4 @@ const NovoCuidador = () => {
     )
 }
 
-export default NovoCuidador;
-
-/*
-                    <Input
-                      name="nome"
-                      value={nome}
-                      onChange={(e) => { setNome(e.target.value); }}
-                      placeholder="Nome Completo"
-                    />
-                    <Select
-                      name="sexo"
-                      label="Sexo"
-                      value={sexo}
-                      options={[sexoMasculino, sexoFeminino, sexoOutro]}
-                      onChange={(e) => { setSexo(e.target.value); }}
-                    />
-                    <Input
-                      name="foto"
-                      label="Link do Avatar"
-                      value={foto}
-                      onChange={(e) => { setFoto(e.target.value); }}
-                    />
-                    <Input
-                      name="whatsapp"
-                      label="Whatsapp"
-                      value={whatsapp}
-                      onChange={(e) => { setWhatsapp(e.target.value); }}
-                    />
-                    <Textarea
-                      name="biografia"
-                      label="Biografia"
-                      value={biografia}
-                      onChange={(e) => { setBiografia(e.target.value); }}
-                    />
-                </fieldset>
-                <fieldset>
-                    <legend style={{'marginBottom': '0'}}>Cidades Atendidas</legend>
-                    <Multiselect
-                        name="cidadesAtendidas"
-                        options={cidades}
-                        onSelect={(selecionados) => { setCidadesAtendidas(selecionados as Iopcoes[]) }}
-                        onRemove={(selecionados) => { setCidadesAtendidas(selecionados as Iopcoes[]) }}
-                        displayValue="nome"
-                        placeholder=''                        
-                        className='input' 
-                        emptyRecordMsg={ cidades.length === 0 ? 'Carregando...' : 'Não há registros'}                       
-                      />    
-*/
+export default Register;

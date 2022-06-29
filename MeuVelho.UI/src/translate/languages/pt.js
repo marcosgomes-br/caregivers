@@ -17,6 +17,9 @@ const messages = {
                         phoneNumber: 'Número de Telefone',
                         password: 'Senha',
                         confirmPassword: 'Confirmar Senha',
+                        validations: {
+                            passwordNotSame: 'As senhas inseridas não são iguais.'
+                        }
                     },
                     button: {
                         login: 'Entrar',
