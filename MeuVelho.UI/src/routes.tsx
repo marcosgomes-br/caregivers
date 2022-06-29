@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import Caregivers from './pages/Caregivers';
 import Register from './pages/Register';
 
-function Routes(){
+const Routes: React.FC = () => {
     return(
         <BrowserRouter>
             <Route path="/" exact component={Home} />

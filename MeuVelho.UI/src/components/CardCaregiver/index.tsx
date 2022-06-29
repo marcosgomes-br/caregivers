@@ -3,7 +3,7 @@ import './style.css';
 import whatsappIcon from '../../assets/images/whatsapp.svg';
 import api from '../../services/api';
 
-export interface Caregiver{
+export interface ICaregiver{
   id: number;
   name: string;
   photo: string;
@@ -14,7 +14,7 @@ export interface Caregiver{
 }
 
 interface CardCaregiverProps{
-  caregiver: Caregiver;
+  caregiver: ICaregiver;
 }
 
 const CardCaregiver: React.FC<CardCaregiverProps> =({caregiver}) =>{
