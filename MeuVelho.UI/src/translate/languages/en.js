@@ -14,7 +14,7 @@ const messages = {
                     newAccount: 'New Account',
                     form: {
                         email: 'Email',
-                        phoneNumber: 'Phone Number',
+                        phoneNumber: 'Whatsapp Number',
                         password: 'Password',
                         confirmPassword: 'Confirm Password',
                         validations: {

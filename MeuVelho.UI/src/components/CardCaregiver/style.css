@@ -1,99 +1,97 @@
 .cuidador-item {
-    background: var(--cor-branco-puro);
-    box-shadow: var(--cor-cinza-escuro) .1rem .2rem .5rem;
-    border-radius: 0.8rem;
-    margin-bottom: 2.4rem;
-    overflow: hidden; 
-} 
+  background: var(--cor-branco-puro);
+  box-shadow: var(--cor-cinza-escuro) 0.1rem 0.2rem 0.5rem;
+  border-radius: 0.8rem;
+  margin-bottom: 2.4rem;
+  overflow: hidden;
+}
 
 .cuidador-item header {
-    padding: 3.2rem 2rem;
-    display: flex;
-    align-items: center;
+  padding: 3.2rem 2rem;
+  display: flex;
+  align-items: center;
 }
 
 .cuidador-item header img {
-    width: 8rem;
-    height: 8rem;
-    border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
 }
 
 .cuidador-item header div {
-    margin-left: 2.4rem;
+  margin-left: 2.4rem;
 }
 
 .cuidador-item header div strong {
-    font: 700 2.4rem Archivo;
-    display: block;
-    color: var(--cor-cinza-escuro)
+  font: 700 2.4rem Archivo;
+  display: block;
+  color: var(--cor-cinza-escuro);
 }
 
-.cuidador-item header div span  {
-   font-size: 1.6rem;
-   display: block;
-   margin-top: 0.4rem;
+.cuidador-item header div span {
+  font-size: 1.6rem;
+  display: block;
+  margin-top: 0.4rem;
 }
 
 .cuidador-item > p {
-    padding: 0 2rem;
-    font-size: 1.6rem;
-    line-height: 2.8rem;
+  padding: 0 2rem;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
 }
 
 .cuidador-item footer {
-    padding: 3.2rem 2rem;
-    margin-top: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  padding: 3.2rem 2rem;
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .cuidador-item footer p strong {
-    color: var(--cor-primaria);
-    font-size: 1.6rem;
-    display: block;
+  color: var(--cor-primaria);
+  font-size: 1.6rem;
+  display: block;
 }
-
 
 .cuidador-item footer a {
-    width: 20rem;
-    height: 5.6rem;
-    background: var(--cor-secundaria);
-    color: var(--cor-branco-puro);
-    border:0;
-    border-radius: 0.8rem ;
-    cursor: pointer;
-    font: 700 1.4rem Archivo;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    transition: all .5s;
-    text-decoration: none;
+  width: 20rem;
+  height: 5.6rem;
+  background: var(--cor-secundaria);
+  color: var(--cor-branco-puro);
+  border: 0;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font: 700 1.4rem Archivo;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: all 0.5s;
+  text-decoration: none;
 }
 
-
 @media (min-width: 700px) {
-    .cuidador-item header,
-    .cuidador-item footer {
-        padding: 3.2rem
-    }
+  .cuidador-item header,
+  .cuidador-item footer {
+    padding: 3.2rem;
+  }
 
-    .cuidador-item > p {
-        padding: 0 3.2rem;
-    }
+  .cuidador-item > p {
+    padding: 0 3.2rem;
+  }
 
-    .cuidador-item footer p strong {
-        display: initial;
-        margin-left: 1.6rem;
-    }
+  .cuidador-item footer p strong {
+    display: initial;
+    margin-left: 1.6rem;
+  }
 
-    .cuidador-item footer button {
-        width: 24.5rem;
-        font-size: 1.6rem;
-        justify-content: center;
-    }
+  .cuidador-item footer button {
+    width: 24.5rem;
+    font-size: 1.6rem;
+    justify-content: center;
+  }
 
-    .cuidador-item footer button img {
-        margin-right: 1.6rem;
-    }
+  .cuidador-item footer button img {
+    margin-right: 1.6rem;
+  }
 }

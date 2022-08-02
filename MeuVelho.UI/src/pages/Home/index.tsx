@@ -45,8 +45,8 @@ function Home() {
         </Grid>
         <Grid container spacing={2} className="container">
           <Grid item xs={12} className="buttons-container">
-            <Button to="/novo-cuidador" icon={faHeartPulse} text={i18n.t('page.home.btnGuardiao')} />
-            <Button to="/cuidadores" icon={faSearch} text={i18n.t('page.home.btnFind')} />
+            <Button to="/register" icon={faHeartPulse} text={i18n.t('page.home.btnGuardiao')} />
+            <Button to="/caregivers" icon={faSearch} text={i18n.t('page.home.btnFind')} />
           </Grid>
         </Grid>
       </Container>

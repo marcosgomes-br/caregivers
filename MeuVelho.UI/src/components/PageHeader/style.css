@@ -19,8 +19,8 @@
 }
 
 .page-header .top-bar-container a{
-    color: var(--cor-branco-puro);
-    text-decoration: none;
+  color: var(--cor-branco-puro);
+  text-decoration: none;
 }
 
 .page-header .top-bar-container a:hover{

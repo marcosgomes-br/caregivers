@@ -6,26 +6,22 @@
 @media (min-width: 700px) {
     #page-cuidadores-list, #page-novo-cuidador {
         max-width: 100%;
-    }
-
+    }   
     #buscar-cuidador {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 16px;
         position: absolute;
         bottom: -30px;
-    }
-
+    }   
     #buscar-cuidador .input-block + .input-block,
     #buscar-cuidador .select-block + .select-block {
         margin-top: 0;
-    }
-
+    }   
     #page-cuidadores-list main, #page-novo-cuidador main {
         max-width: 740px;
         margin: 0 auto;
-    }   
-
+    }       
     #page-cuidadores-list main {
         padding: 2.4rem 0; 
     }
