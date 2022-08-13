@@ -5,9 +5,10 @@ import logo from '../../assets/images/logo.svg';
 
 interface IPageHeaderProps{
     titulo: string;
+    children?: React.ReactNode;
 }
 
-const PageHeader: React.FC<IPageHeaderProps> = ({ titulo, children }) => {
+const PageHeader: React.FC<IPageHeaderProps> = ({titulo, children}) => {
   return (
     <header className="page-header">
       <div className="top-bar-container">

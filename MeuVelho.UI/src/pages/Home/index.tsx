@@ -34,12 +34,12 @@ function Home() {
         <Grid container spacing={2} alignItems="center" direction="row" className="container">
           <Grid item xs={7} style={{paddingRight: '1rem'}} className="logo-container">
             <img src={logoImage} alt="Logo Meu Velho"/>
-            <h2>{i18n.t('page.home.slogan')}</h2>
+            <h2>{i18n.t('page.home.slogan').toString()}</h2>
           </Grid>
           <Grid item xs={5} className="total-connections-container">
             <img src={heart} alt={i18n.t('page.home.altHeart')} />
             <span className="total-connections">
-              {totalConnections} {i18n.t('page.home.connections')}
+              {totalConnections} {i18n.t('page.home.connections').toString()}
             </span>
           </Grid>
         </Grid>

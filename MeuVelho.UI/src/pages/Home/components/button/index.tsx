@@ -9,12 +9,12 @@ interface IButtonProps{
 }
 
 const Button: React.FC<IButtonProps> = ({to, icon, text}) => {
-    return(
-        <Link to={to}>
-            <FontAwesomeIcon icon={icon} style={{paddingRight: '1rem', fontSize: '3rem'}} /> 
-            {text}
-        </Link>
-    );
+  return(
+    <Link to={to}>
+      <FontAwesomeIcon icon={icon} style={{paddingRight: '1rem', fontSize: '3rem'}} /> 
+      {text}
+    </Link>
+  );
 }
 
 export default Button;

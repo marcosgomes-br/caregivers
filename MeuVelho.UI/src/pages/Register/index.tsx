@@ -17,90 +17,90 @@ interface IUser{
 
 const Register = () => {
   const [user, setUser] = useState<IUser>({} as IUser);
-    const handleNewUser = (e: FormEvent) => {
-      e.preventDefault();
+  const handleNewUser = (e: FormEvent) => {
+    e.preventDefault();
       
-      api.post('auth/create', user)
+    api.post('auth/create', user)
       .then(() => {
         alert("cadastro realizado com sucesso!");
       })
       .catch(() => {
         alert("Erro ao cadastrar cuidador");
       });
-    }
+  }
 
-    return (
-        <div id="page-cuidadores-list" className="novoCuidador">
-          <PageHeader titulo={i18n.t('page.caregiver.title')} />
-            <main style={{marginTop: '-100px'}}>
-              <form onSubmit={handleNewUser} onKeyDown={(e) => {
-                if (e.keyCode === 13) {             
-                  e.preventDefault();
-                  return false;
-                }
-              }}>
-                <fieldset>
-                  <legend>
-                    {i18n.t('page.caregiver.newAccount')}
-                    <Button 
-                      variant="contained" 
-                      color="inherit" 
-                      size="large" 
-                      style={{
-                        background: 'none', 
-                        color: '#00A990', 
-                        border: '2px solid #00A990'
-                      }}
-                    >
-                      <FontAwesomeIcon icon={faSignIn} style={{paddingRight: '.5rem'}} /> 
-                      {i18n.t('page.caregiver.button.login')}
-                    </Button>  
-                  </legend>      
-                  <Input                     
-                    name="email"
-                    type="email"
-                    value={user.email}
-                    required
-                    onChange={(e) => { setUser({...user, email: e.target.value }) }}
-                    placeholder={i18n.t('page.caregiver.form.email')}
-                  />
-                  <Input                     
-                    name="phone"
-                    type="tel"
-                    value={user.phoneNumber}
-                    required
-                    onChange={(e) => { setUser({...user, phoneNumber: e.target.value }) }}
-                    placeholder={i18n.t('page.caregiver.form.phoneNumber')}
-                  />
-                  <Input                     
-                    name="password"
-                    type="password"
-                    value={user.password}
-                    required
-                    onChange={(e) => { setUser({...user, password: e.target.value }) }}
-                    placeholder={i18n.t('page.caregiver.form.password')}
-                  />
-                  <Input                     
-                    name="confirm-password"
-                    type="password"
-                    value={user.confirmPassword}
-                    required
-                    onChange={(e) => { setUser({...user, confirmPassword: e.target.value }) }}
-                    placeholder={i18n.t('page.caregiver.form.confirmPassword')}
-                  />
-                </fieldset>
-                <footer>
-                  { (user.password !== user.confirmPassword && user.confirmPassword) &&
+  return (
+    <div id="page-cuidadores-list" className="novoCuidador">
+      <PageHeader titulo={i18n.t('page.caregiver.title').toString()} />
+      <main style={{marginTop: '-100px'}}>
+        <form onSubmit={handleNewUser} onKeyDown={(e) => {
+          if (e.keyCode === 13) {             
+            e.preventDefault();
+            return false;
+          }
+        }}>
+          <fieldset>
+            <legend>
+              {i18n.t('page.caregiver.newAccount').toString()}
+              <Button 
+                variant="contained" 
+                color="inherit" 
+                size="large" 
+                style={{
+                  background: 'none', 
+                  color: '#00A990', 
+                  border: '2px solid #00A990'
+                }}
+              >
+                <FontAwesomeIcon icon={faSignIn} style={{paddingRight: '.5rem'}} /> 
+                {i18n.t('page.caregiver.button.login').toString()}
+              </Button>  
+            </legend>      
+            <Input                     
+              name="email"
+              type="email"
+              value={user.email}
+              required
+              onChange={(e) => { setUser({...user, email: e.target.value }) }}
+              placeholder={i18n.t('page.caregiver.form.email')}
+            />
+            <Input                     
+              name="phone"
+              type="tel"
+              value={user.phoneNumber}
+              required
+              onChange={(e) => { setUser({...user, phoneNumber: e.target.value }) }}
+              placeholder={i18n.t('page.caregiver.form.phoneNumber')}
+            />
+            <Input                     
+              name="password"
+              type="password"
+              value={user.password}
+              required
+              onChange={(e) => { setUser({...user, password: e.target.value }) }}
+              placeholder={i18n.t('page.caregiver.form.password')}
+            />
+            <Input                     
+              name="confirm-password"
+              type="password"
+              value={user.confirmPassword}
+              required
+              onChange={(e) => { setUser({...user, confirmPassword: e.target.value }) }}
+              placeholder={i18n.t('page.caregiver.form.confirmPassword')}
+            />
+          </fieldset>
+          <footer>
+            { (user.password !== user.confirmPassword && user.confirmPassword) &&
                     <p>
-                      {i18n.t('page.caregiver.form.validation.passwordNotSame')}
+                      {i18n.t('page.caregiver.form.validation.passwordNotSame').toString()}
                     </p>
-                  }
-                    <button id="btn-salvar">{i18n.t('page.caregiver.button.registerMe')}</button>
-                </footer>
-            </form>
-        </main>
-     </div>
-    )
+            }
+            <button id="btn-salvar">{i18n.t('page.caregiver.button.registerMe').toString()}</button>
+          </footer>
+        </form>
+      </main>
+    </div>
+  )
 }
 
 export default Register;
