@@ -37,7 +37,7 @@ textarea,
     font: 500 1.6rem Poppins;
 }
 
-.buttons-container a:hover, #btn-salvar:hover, .cuidador-item footer a:hover{
+.buttons-container a:hover, #btn-save:hover, .caregiver-card footer a:hover{
     box-shadow: none;
 }
 

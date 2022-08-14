@@ -25,8 +25,23 @@ const messages = {
             login: 'Entrar',
             registerMe: 'Registrar me'
           }
+        },
+        caregivers: {
+          title: 'Estes são os cuidadores disponíveis',
+          card: {
+            connections: 'Conexões realizadas: ',
+            buttonContactUs: 'Entrar em contato'
+          }
         }
       }
+    },
+    component: {
+      pageHeader: {
+        button: {
+          backPage: 'Voltar'
+        }
+      },
+      select: 'Selecione uma opção',
     }
   }
 }

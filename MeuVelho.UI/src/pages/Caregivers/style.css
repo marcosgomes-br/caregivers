@@ -1,28 +1,17 @@
-#page-cuidadores-list, #page-novo-cuidador{
+#page-register, #page-caregivers {
     width: 100vw;
     height: 100vh;
 }
 
 @media (min-width: 700px) {
-    #page-cuidadores-list, #page-novo-cuidador {
+    #page-register, #page-caregivers {
         max-width: 100%;
     }   
-    #buscar-cuidador {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 16px;
-        position: absolute;
-        bottom: -30px;
-    }   
-    #buscar-cuidador .input-block + .input-block,
-    #buscar-cuidador .select-block + .select-block {
-        margin-top: 0;
-    }   
-    #page-cuidadores-list main, #page-novo-cuidador main {
+    #page-register main, #page-caregivers main {
         max-width: 740px;
         margin: 0 auto;
     }       
-    #page-cuidadores-list main {
+    #page-register main {
         padding: 2.4rem 0; 
     }
 }

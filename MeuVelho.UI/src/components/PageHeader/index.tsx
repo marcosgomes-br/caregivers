@@ -2,21 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 import logo from '../../assets/images/logo.svg';
+import { i18n } from '../../translate/i18n';
 
 interface IPageHeaderProps{
-    titulo: string;
+  title: string;
     children?: React.ReactNode;
 }
 
-const PageHeader: React.FC<IPageHeaderProps> = ({titulo, children}) => {
+const PageHeader: React.FC<IPageHeaderProps> = ({title, children}) => {
   return (
     <header className="page-header">
       <div className="top-bar-container">
-        <Link to="/">VOLTAR</Link>
-        <img src={logo} alt="Logo - Plataforma Meu Velho" />
+        <Link to="/">{i18n.t('component.pageHeader.button.backPage').toString()}</Link>
+        <img src={logo} alt="Logo - Meu Velho" />
       </div>
       <div className="header-content">
-        <strong>{titulo}</strong>
+        <strong>{title}</strong>
         {children}
       </div>
     </header>

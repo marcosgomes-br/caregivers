@@ -1,4 +1,4 @@
-.cuidador-item {
+.caregiver-card {
   background: var(--cor-branco-puro);
   box-shadow: var(--cor-cinza-escuro) 0.1rem 0.2rem 0.5rem;
   border-radius: 0.8rem;
@@ -6,41 +6,41 @@
   overflow: hidden;
 }
 
-.cuidador-item header {
+.caregiver-card header {
   padding: 3.2rem 2rem;
   display: flex;
   align-items: center;
 }
 
-.cuidador-item header img {
+.caregiver-card header img {
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
 }
 
-.cuidador-item header div {
+.caregiver-card header div {
   margin-left: 2.4rem;
 }
 
-.cuidador-item header div strong {
+.caregiver-card header div strong {
   font: 700 2.4rem Archivo;
   display: block;
   color: var(--cor-cinza-escuro);
 }
 
-.cuidador-item header div span {
+.caregiver-card header div span {
   font-size: 1.6rem;
   display: block;
   margin-top: 0.4rem;
 }
 
-.cuidador-item > p {
+.caregiver-card > p {
   padding: 0 2rem;
   font-size: 1.6rem;
   line-height: 2.8rem;
 }
 
-.cuidador-item footer {
+.caregiver-card footer {
   padding: 3.2rem 2rem;
   margin-top: 1.2rem;
   display: flex;
@@ -48,13 +48,13 @@
   justify-content: space-between;
 }
 
-.cuidador-item footer p strong {
+.caregiver-card footer p strong {
   color: var(--cor-primaria);
   font-size: 1.6rem;
   display: block;
 }
 
-.cuidador-item footer a {
+.caregiver-card footer a {
   width: 20rem;
   height: 5.6rem;
   background: var(--cor-secundaria);
@@ -71,27 +71,27 @@
 }
 
 @media (min-width: 700px) {
-  .cuidador-item header,
-  .cuidador-item footer {
+  .caregiver-card header,
+  .caregiver-card footer {
     padding: 3.2rem;
   }
 
-  .cuidador-item > p {
+  .caregiver-card > p {
     padding: 0 3.2rem;
   }
 
-  .cuidador-item footer p strong {
+  .caregiver-card footer p strong {
     display: initial;
     margin-left: 1.6rem;
   }
 
-  .cuidador-item footer button {
+  .caregiver-card footer button {
     width: 24.5rem;
     font-size: 1.6rem;
     justify-content: center;
   }
 
-  .cuidador-item footer button img {
+  .caregiver-card footer button img {
     margin-right: 1.6rem;
   }
 }

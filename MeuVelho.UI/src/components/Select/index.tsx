@@ -1,8 +1,9 @@
 import React, { SelectHTMLAttributes } from "react";
+import { i18n } from "../../translate/i18n";
 
 import "./style.css";
 
-interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
+interface ISelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   name: string;
   label: string;
   options: Array<{
@@ -11,13 +12,13 @@ interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   }>;
 }
 
-const Select: React.FC<SelectProps> = ({ label, name, options, ...rest }) => {
+const Select: React.FC<ISelectProps> = ({ label, name, options, ...rest }) => {
   return (
     <div className="select-block">
       <label htmlFor={name}>{label}</label>
       <select value="" id={name} {...rest}>
         <option value="" disabled hidden>
-          Selecione uma opção
+          {i18n.t('component.select').toString()}
         </option>
         {options.map((option) => {
           return (

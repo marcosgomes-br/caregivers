@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import whatsappIcon from '../../assets/images/whatsapp.svg';
 import api from '../../services/api';
+import { i18n } from '../../translate/i18n';
 
 export interface ICaregiver{
   id: number;
@@ -18,10 +19,9 @@ interface ICardCaregiverProps{
 }
 
 const CardCaregiver: React.FC<ICardCaregiverProps> =({caregiver}) =>{
-  const RegistrarNovoContato = () =>{
-    api.post('contato', { 
-      idCuidador: caregiver.id,
-      textoAleatorio: 'okaskosoa'
+  const registerNewContact = () => {
+    api.post('api/connection', { 
+      idCaregiver: caregiver.id
     });
   }
 
@@ -33,7 +33,7 @@ const CardCaregiver: React.FC<ICardCaregiverProps> =({caregiver}) =>{
   }
 
   return(
-    <article className="cuidador-item">
+    <article className="caregiver-card">
       <header>
         <img src={caregiver.photo} alt={caregiver.name} />
         <div>
@@ -46,16 +46,16 @@ const CardCaregiver: React.FC<ICardCaregiverProps> =({caregiver}) =>{
     
       <footer>
         <p>
-            Conexões Realizadas: 
+          {i18n.t('page.caregivers.card.connections').toString()}: 
           <strong>{caregiver.contacts}</strong>
         </p>
         <a
-          onClick={RegistrarNovoContato}
+          onClick={registerNewContact}
           target="_blank"
           href={`https://wa.me/+55${caregiver.whatsapp}`} rel="noreferrer"
         >
           <img src={whatsappIcon} alt="whatsapp" />
-            Entrar em contato
+          {i18n.t('page.caregivers.card.buttonContactUs').toString()}
         </a>
       </footer>
     </article>

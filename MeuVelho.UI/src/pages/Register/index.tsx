@@ -30,8 +30,8 @@ const Register = () => {
   }
 
   return (
-    <div id="page-cuidadores-list" className="novoCuidador">
-      <PageHeader titulo={i18n.t('page.caregiver.title').toString()} />
+    <div id="page-register" className="new-caregiver">
+      <PageHeader title={i18n.t('page.caregiver.title').toString()} />
       <main style={{marginTop: '-100px'}}>
         <form onSubmit={handleNewUser} onKeyDown={(e) => {
           if (e.keyCode === 13) {             
@@ -95,7 +95,7 @@ const Register = () => {
                       {i18n.t('page.caregiver.form.validation.passwordNotSame').toString()}
                     </p>
             }
-            <button id="btn-salvar">{i18n.t('page.caregiver.button.registerMe').toString()}</button>
+            <button id="btn-save">{i18n.t('page.caregiver.button.registerMe').toString()}</button>
           </footer>
         </form>
       </main>

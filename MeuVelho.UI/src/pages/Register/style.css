@@ -2,7 +2,7 @@
     margin-bottom: 6.4rem;
 }
 
-.novoCuidador main {
+.new-caregiver main {
     background: var(--cor-branco-puro);
     width: 100%;
     max-width: 74rem;
@@ -12,17 +12,17 @@
     overflow: hidden;
 }
 
-.novoCuidador main fieldset {
+.new-caregiver main fieldset {
     border: 0;
     padding: 0 2.4rem;
     margin-bottom: 2.4rem;
 }
 
-.novoCuidador main fieldset + fieldset {
+.new-caregiver main fieldset + fieldset {
     margin-top: 2.4rem;
 }
 
-.novoCuidador main fieldset legend {
+.new-caregiver main fieldset legend {
     font: 700 2.4rem Archivo;
     color: var(--cor-cinza-escuro);
     margin-bottom: 2.4rem;
@@ -33,40 +33,30 @@
     border-bottom: 1px solid var(---cor-cinza-claro)
 }
 
-.novoCuidador .botao-add-horario{
-    background: none;
-    border: 0;
-    color: var(--cor-primary);
-    font: 700 1.6rem Archivo;
-    cursor: pointer;
-    transition: color 0.2s;
-    outline: none;
-}
-
-.novoCuidador main .schedule-item {
+.new-caregiver main .schedule-item {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     column-gap: 1.6rem;
 }
 
-.novoCuidador .input-block + .input-block {
+.new-caregiver .input-block + .input-block {
     margin-top: 0 !important;
 }
 
-.novoCuidador main footer {
+.new-caregiver main footer {
     padding: 2rem 2.4rem 0 2.4rem;
     background: var(--cor-branco-sujo);
     border-top: 1px solid var(--cor-cinza);
 }
 
-.novoCuidador main footer p {
+.new-caregiver main footer p {
     display: inline-block;
     font-size: 1.4rem;
     line-height: 2.4rem;
     color: #D22323;    
 }
 
-.novoCuidador main footer button {
+.new-caregiver main footer button {
     width: 15rem;
     height: 4.6rem;
     float: right;
