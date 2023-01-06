@@ -1,7 +1,0 @@
-{
-    //CREATE "copy" for local/bin/ sudo ln -s /snap/dotnet-sdk/current/dotnet /usr/local/bin/dotnet
-    //WHERE C# ONMINI NOT WORKING SDK .NET
-    "recommendations": [
-        "ms-dotnettools.csharp"
-    ]
-}
