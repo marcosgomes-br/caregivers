@@ -14,6 +14,6 @@ namespace Caregivers.Domains
         public Guid Id { get; private set; }
         public DateTime Date { get; private set; }
         public Guid IdCaregiver { get; private set; }
-        public CaregiverDomain Caregiver { get; private set; }
+        public CaregiverDomain? Caregiver { get; private set; }
     }
 }

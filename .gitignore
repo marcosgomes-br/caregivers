@@ -82,3 +82,9 @@ yarn-error.log*
 
 #vs code
 .vscode/
+.vs/ProjectEvaluation/caregivers.projects.v5.2
+.vs/ProjectEvaluation/caregivers.metadata.v5.2
+.vs/Caregivers/v17/.futdcache.v2
+.vs/Caregivers/FileContentIndex/9bead675-8ed2-4293-b0f3-20d89778495f.vsidx
+.vs/Caregivers/FileContentIndex/4dabc8ff-e89f-44aa-9aba-9138bb995022.vsidx
+.vs/Caregivers/FileContentIndex/0739779c-cec1-45dd-96fc-a813b957601f.vsidx

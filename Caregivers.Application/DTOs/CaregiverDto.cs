@@ -1,7 +1,7 @@
 ﻿#pragma warning disable CS8618
 using System;
 using System.Collections.Generic;
-using static Caregivers.Domains.Enums.MeuVelhoEnums;
+using static Caregivers.Domains.Enums.CaregiversEnums;
 
 namespace Caregivers.Application.DTOs
 {

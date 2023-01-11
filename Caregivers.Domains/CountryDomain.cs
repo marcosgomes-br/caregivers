@@ -14,6 +14,6 @@ namespace Caregivers.Domains
 
         public Guid Id { get; private set; }
         public string Name { get; private set; }
-        public virtual ICollection<StateDomain> States { get; private set; }
+        public ICollection<StateDomain> States { get; private set; } = new List<StateDomain>();
     }
 }

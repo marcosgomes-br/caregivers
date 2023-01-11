@@ -1,7 +1,7 @@
 ﻿using Caregivers.Domains.Validations;
 using System;
 using System.Collections.Generic;
-using static Caregivers.Domains.Enums.MeuVelhoEnums;
+using static Caregivers.Domains.Enums.CaregiversEnums;
 
 namespace Caregivers.Domains
 {
@@ -31,9 +31,9 @@ namespace Caregivers.Domains
         public bool Active { get; private set; } = true;
         public DateTime RegisterIn { get; private set; } = DateTime.Now;
         public DateTime? DisabledIn { get; private set; }
-        public ICollection<ConnectionDomain> Connections { get; set; }
-        public ICollection<CityDomain> Cities { get; set; }
-        public ICollection<CaregiverCityDomain> CaregiversCities { get; set; }
+        public ICollection<ConnectionDomain> Connections { get; set; } = new List<ConnectionDomain>();
+        public ICollection<CityDomain> Cities { get; set; } = new List<CityDomain>();
+        public ICollection<CaregiverCityDomain> CaregiversCities { get; set; } = new List<CaregiverCityDomain>();
 
         public void Disable()
         {

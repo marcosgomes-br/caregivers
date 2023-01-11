@@ -3,14 +3,14 @@ const messages = {
     translations: {
       page: {
         home: {
-          slogan: 'Conectamos pessoas que cuidam de pessoas.',
+          slogan: 'Conectamos quem precisa de cuidados com quem sabe cuidar.',
           btnGuardiao: 'Sou um Cuidador',
-          btnFind: 'Encontrar Cuidador',
+          btnFind: 'Buscar Cuidadores',
           connections: 'conexões realizadas.',
           altHeart: 'Coração'
         },
         caregiver: {
-          title: 'Que incrível que você quer cuidar de alguém!',
+          title: 'Legal! Então você quer cuidar de alguém... Entre e veja as oportunidades disponíveis.',
           newAccount: 'Nova Conta',
           form: {
             email: 'Email',
@@ -27,7 +27,7 @@ const messages = {
           }
         },
         caregivers: {
-          title: 'Estes são os cuidadores disponíveis',
+          title: 'Hmm... Então você ou alguém que você ama precisa de cuidados. Vamos te ajudar a encontrar a pessoa certa!',
           card: {
             connections: 'Conexões realizadas: ',
             buttonContactUs: 'Entrar em contato'

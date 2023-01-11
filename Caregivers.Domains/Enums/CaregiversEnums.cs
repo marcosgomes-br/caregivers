@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Caregivers.Domains.Enums
 {
-    public static class MeuVelhoEnums
+    public static class CaregiversEnums
     {
         public enum Gender
         {

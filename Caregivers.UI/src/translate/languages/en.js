@@ -3,7 +3,7 @@ const messages = {
     translations: {
       page: {
         home: {
-          slogan: 'We connect people who take care of people',
+          slogan: 'We connect those who need care with those who know how to care.',
           btnGuardiao: "I'm a Caregiver",
           btnFind: 'Find Caregivers',
           connections: 'connections achieved.',
