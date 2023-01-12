@@ -5,7 +5,7 @@ namespace Caregivers.Domains
 {
     public class UserRoleDomain : IdentityUserRole<Guid>
     {
-        public UserDomain User { get; } = new UserDomain();
-        public RoleDomain Role { get; } = new RoleDomain();
+        public User User { get; } = new User();
+        public Role Role { get; } = new Role();
     }
 }

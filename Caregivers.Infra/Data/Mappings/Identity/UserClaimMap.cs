@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Caregivers.Infra.Data.Mappings
 {
-    public class UserClaimMap : IEntityTypeConfiguration<UserClaimDomain>
+    public class UserClaimMap : IEntityTypeConfiguration<UserClaim>
     {
-        public void Configure(EntityTypeBuilder<UserClaimDomain> builder)
+        public void Configure(EntityTypeBuilder<UserClaim> builder)
         {
             builder.ToTable("USER_CLAIM", "IDENTITY");
 

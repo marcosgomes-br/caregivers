@@ -11,10 +11,10 @@ namespace Caregivers.Application.Services.Identity
 {
     public class IdentityService : IIdentityService
     {
-        private readonly UserManager<UserDomain> _userManager;
-        private readonly SignInManager<UserDomain> _signInManager;
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
         private readonly IConfiguration _configuration;
-        public IdentityService(UserManager<UserDomain> userManager, SignInManager<UserDomain> signInManager, IConfiguration configuration)
+        public IdentityService(UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration configuration)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -23,7 +23,7 @@ namespace Caregivers.Application.Services.Identity
 
         public async Task<IdentityResult> Create(string email, string password, string phoneNumber)
         {
-            var user = new UserDomain
+            var user = new User
             {
                 Email = email,
                 UserName = email.Split('@').First(),

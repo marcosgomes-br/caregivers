@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Caregivers.Infra.Data.Mappings
 {
-    public class RoleClaimMap : IEntityTypeConfiguration<RoleClaimDomain>
+    public class RoleClaimMap : IEntityTypeConfiguration<RoleClaim>
     {
-        public void Configure(EntityTypeBuilder<RoleClaimDomain> builder)
+        public void Configure(EntityTypeBuilder<RoleClaim> builder)
         {
             builder.ToTable("ROLE_CLAIM", "IDENTITY");
 

@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Caregivers.Infra.Data.Mappings
 {
-    public class RoleMap : IEntityTypeConfiguration<RoleDomain>
+    public class RoleMap : IEntityTypeConfiguration<Role>
     {
-        public void Configure(EntityTypeBuilder<RoleDomain> builder)
+        public void Configure(EntityTypeBuilder<Role> builder)
         {
             builder.ToTable("ROLE", "IDENTITY");
 

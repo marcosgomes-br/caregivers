@@ -11,7 +11,7 @@ namespace Caregivers.Application.Helpers
 {
     public static class Token
     {
-        public static TokenDto Generate(UserDomain user, IConfiguration configuration)
+        public static TokenDto Generate(User user, IConfiguration configuration)
         {
             var claims = new[]
             {

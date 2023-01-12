@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Caregivers.Infra.Data.Mappings
 {
-    public class LoginMap : IEntityTypeConfiguration<LoginDomain>
+    public class LoginMap : IEntityTypeConfiguration<Login>
     {
-        public void Configure(EntityTypeBuilder<LoginDomain> builder)
+        public void Configure(EntityTypeBuilder<Login> builder)
         {
             builder.ToTable("LOGIN", "IDENTITY");
 

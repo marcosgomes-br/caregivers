@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Caregivers.Infra.Data.Mappings
 {
-    public class UserTokenMap : IEntityTypeConfiguration<UserTokenDomain>
+    public class UserTokenMap : IEntityTypeConfiguration<UserToken>
     {
-        public void Configure(EntityTypeBuilder<UserTokenDomain> builder)
+        public void Configure(EntityTypeBuilder<UserToken> builder)
         {
             builder.ToTable("USER_TOKEN", "IDENTITY");
             builder.HasNoKey();

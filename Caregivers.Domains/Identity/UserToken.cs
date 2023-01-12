@@ -5,6 +5,6 @@ namespace Caregivers.Domains
 {
     public class UserTokenDomain : IdentityUserToken<Guid>
     {
-        public UserDomain User { get; } = new UserDomain();
+        public User User { get; } = new User();
     }
 }

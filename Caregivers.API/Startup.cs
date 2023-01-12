@@ -38,7 +38,7 @@ namespace Caregivers.API
             services.AddDbContext<MeuVelhoContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"))
                     .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
-            services.AddIdentity<UserDomain, RoleDomain>()
+            services.AddIdentity<User, Role>()
                 .AddEntityFrameworkStores<MeuVelhoContext>()
                 .AddDefaultTokenProviders();
             

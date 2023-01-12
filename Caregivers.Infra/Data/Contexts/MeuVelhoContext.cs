@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Caregivers.Infra.Data.Contexts
 {
-    public class MeuVelhoContext : IdentityDbContext<UserDomain, RoleDomain, Guid, 
-                                                     UserClaimDomain, UserRoleDomain, 
-                                                     LoginDomain, RoleClaimDomain, 
-                                                     UserTokenDomain>
+    public class MeuVelhoContext : IdentityDbContext<User, Role, Guid, 
+                                                     UserClaim, UserRole, 
+                                                     Login, RoleClaim, 
+                                                     UserToken>
     {
         public MeuVelhoContext(DbContextOptions<MeuVelhoContext> options) : base(options)
         {
