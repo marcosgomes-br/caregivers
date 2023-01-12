@@ -3,6 +3,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.vsidx
 
 # Build results
 [Dd]ebug/
