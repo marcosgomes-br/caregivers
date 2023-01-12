@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Caregivers.Domains
 {
-    public class LoginDomain : IdentityUserLogin<Guid>
+    public class Login : IdentityUserLogin<Guid>
     {
-        public UserDomain User { get; } = new UserDomain();
+        public User User { get; } = new User();
     }
 }

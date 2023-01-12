@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Caregivers.Domains
 {
-    public class RoleClaimDomain : IdentityRoleClaim<Guid>
+    public class RoleClaim : IdentityRoleClaim<Guid>
     {
-        public RoleDomain Role { get; } = new RoleDomain();
+        public Role Role { get; } = new Role();
     }
 }

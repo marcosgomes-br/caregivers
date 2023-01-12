@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Caregivers.Domains
 {
-    public class UserClaimDomain : IdentityUserClaim<Guid>
+    public class UserClaim : IdentityUserClaim<Guid>
     {
         
     }
