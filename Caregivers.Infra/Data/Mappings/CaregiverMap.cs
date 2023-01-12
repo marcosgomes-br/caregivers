@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Caregivers.Infra.Data.Mappings
 {
-    public class CaregiverMap : IEntityTypeConfiguration<CaregiverDomain>
+    public class CaregiverMap : IEntityTypeConfiguration<Caregiver>
     {
-        public void Configure(EntityTypeBuilder<CaregiverDomain> builder)
+        public void Configure(EntityTypeBuilder<Caregiver> builder)
         {
             builder.ToTable("CAREGIVER");
             builder.HasKey(x => x.Id);
@@ -21,7 +21,7 @@ namespace Caregivers.Infra.Data.Mappings
             builder.Property(x => x.RegisterIn).HasColumnName("REGISTER_IN").IsRequired();
             builder.Property(x => x.DisabledIn).HasColumnName("DISABLED_IN").IsRequired(false);
 
-            builder.HasMany(x => x.Cities).WithMany(x => x.Caregivers).UsingEntity<CaregiverCityDomain>(
+            builder.HasMany(x => x.Cities).WithMany(x => x.Caregivers).UsingEntity<CaregiverCity>(
                 x =>
                 x.HasOne(y => y.City).WithMany(y => y.CaregiversCities).HasForeignKey(y => y.IdCity),
                 x =>

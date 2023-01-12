@@ -2,9 +2,9 @@
 
 namespace Caregivers.Domains
 {
-    public class CaregiverCityDomain
+    public class CaregiverCity
     {
-        public CaregiverCityDomain(Guid idCaregiver, Guid idCity)
+        public CaregiverCity(Guid idCaregiver, Guid idCity)
         {
             IdCaregiver = idCaregiver;
             IdCity = idCity;
@@ -12,7 +12,7 @@ namespace Caregivers.Domains
 
         public Guid IdCaregiver { get; private set; }
         public Guid IdCity { get; private set; }
-        public CaregiverDomain Caregiver { get; set; }
-        public CityDomain City { get; set; }
+        public Caregiver? Caregiver { get; set; }
+        public City? City { get; set; }
     }
 }

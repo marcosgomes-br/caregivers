@@ -5,9 +5,9 @@ using System;
 
 namespace Caregivers.Infra.Data.Mappings
 {
-    public class CountryMap : IEntityTypeConfiguration<CountryDomain>
+    public class CountryMap : IEntityTypeConfiguration<Country>
     {
-        public void Configure(EntityTypeBuilder<CountryDomain> builder)
+        public void Configure(EntityTypeBuilder<Country> builder)
         {
             builder.ToTable("COUNTRY");
 
@@ -18,7 +18,7 @@ namespace Caregivers.Infra.Data.Mappings
 
             builder.HasData(new[]
             {
-                new CountryDomain(new Guid("00000000-0000-0000-0000-000000000001"), "Brasil")
+                new Country(new Guid("00000000-0000-0000-0000-000000000001"), "Brasil")
             });
         }
     }

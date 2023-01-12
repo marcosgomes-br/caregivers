@@ -45,8 +45,8 @@ namespace Caregivers.Infra.Data.Contexts
             modelBuilder.ApplyConfiguration(new UserTokenMap());
         }
         
-        public DbSet<CityDomain> Cities { get; set; }
-        public DbSet<CaregiverDomain> Caregivers { get; set; }
-        public DbSet<ConnectionDomain> Connections { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Caregiver> Caregivers { get; set; }
+        public DbSet<Connection> Connections { get; set; }
     }
 }

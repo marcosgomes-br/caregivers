@@ -15,7 +15,7 @@ namespace Caregivers.Infra.Data.Repositories
         {
             _context = context;
         }
-        public async Task<List<CityDomain>> Get()
+        public async Task<List<City>> Get()
         {
             return await _context.Cities.OrderBy(x => x.Name)
                                     .Include(x => x.State)

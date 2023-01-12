@@ -5,9 +5,9 @@ using System;
 
 namespace Caregivers.Infra.Data.Mappings
 {
-    public class StateMap : IEntityTypeConfiguration<StateDomain>
+    public class StateMap : IEntityTypeConfiguration<State>
     {
-        public void Configure(EntityTypeBuilder<StateDomain> builder)
+        public void Configure(EntityTypeBuilder<State> builder)
         {
             builder.ToTable("STATE");
 
@@ -22,9 +22,9 @@ namespace Caregivers.Infra.Data.Mappings
 
             builder.HasData(new[]
             {
-                new StateDomain(new Guid("00000000-0000-0000-0000-000000000001"), "Minas Gerais", new Guid("00000000-0000-0000-0000-000000000001")),
-                new StateDomain(new Guid("00000000-0000-0000-0000-000000000002"), "Rio de Janeiro", new Guid("00000000-0000-0000-0000-000000000001")),
-                new StateDomain(new Guid("00000000-0000-0000-0000-000000000003"), "São Paulo", new Guid("00000000-0000-0000-0000-000000000001")),
+                new State(new Guid("00000000-0000-0000-0000-000000000001"), "Minas Gerais", new Guid("00000000-0000-0000-0000-000000000001")),
+                new State(new Guid("00000000-0000-0000-0000-000000000002"), "Rio de Janeiro", new Guid("00000000-0000-0000-0000-000000000001")),
+                new State(new Guid("00000000-0000-0000-0000-000000000003"), "São Paulo", new Guid("00000000-0000-0000-0000-000000000001")),
             });
         }
     }

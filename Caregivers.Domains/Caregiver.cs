@@ -5,9 +5,9 @@ using static Caregivers.Domains.Enums.CaregiversEnums;
 
 namespace Caregivers.Domains
 {
-    public class CaregiverDomain
+    public class Caregiver
     {
-        public CaregiverDomain(Guid id, string fullName, Gender gender, 
+        public Caregiver(Guid id, string fullName, Gender gender, 
             string photo, string biography, string whatsapp)
         {
             Id = id;
@@ -31,9 +31,9 @@ namespace Caregivers.Domains
         public bool Active { get; private set; } = true;
         public DateTime RegisterIn { get; private set; } = DateTime.Now;
         public DateTime? DisabledIn { get; private set; }
-        public ICollection<ConnectionDomain> Connections { get; set; } = new List<ConnectionDomain>();
-        public ICollection<CityDomain> Cities { get; set; } = new List<CityDomain>();
-        public ICollection<CaregiverCityDomain> CaregiversCities { get; set; } = new List<CaregiverCityDomain>();
+        public ICollection<Connection> Connections { get; set; } = new List<Connection>();
+        public ICollection<City> Cities { get; set; } = new List<City>();
+        public ICollection<CaregiverCity> CaregiversCities { get; set; } = new List<CaregiverCity>();
 
         public void Disable()
         {

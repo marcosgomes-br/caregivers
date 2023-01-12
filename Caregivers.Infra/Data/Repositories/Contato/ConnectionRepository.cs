@@ -15,7 +15,7 @@ namespace Caregivers.Infra.Data.Repositories
         }
         public async Task Save(Guid idCaregiver)
         {
-            _context.Connections.Add(new Domains.ConnectionDomain(idCaregiver));
+            _context.Connections.Add(new Domains.Connection(idCaregiver));
             await _context.SaveChangesAsync();
         }
 

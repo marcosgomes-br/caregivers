@@ -27,19 +27,19 @@ namespace Caregivers.Infra.Data.Repositories
             _context.SaveChangesAsync();
         }
 
-        public async Task<List<CaregiverDomain>> Get()
+        public async Task<List<Caregiver>> Get()
         {
             return await _context.Caregivers.Include(x => x.Cities).OrderBy(o => o.FullName).ToListAsync();
         }
 
-        public async Task<CaregiverDomain> Get(Guid id)
+        public async Task<Caregiver> Get(Guid id)
         {
             return await _context.Caregivers.Where(x => x.Id.Equals(id))
                                             .Include(x => x.Cities)
                                             .FirstOrDefaultAsync();
         }
 
-        public async Task<CaregiverDomain> Save(CaregiverDomain caregiver)
+        public async Task<Caregiver> Save(Caregiver caregiver)
         {
             var anyRegister = _context.Caregivers.Any(x => x.Id == caregiver.Id);
             if (anyRegister)

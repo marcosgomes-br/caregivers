@@ -2,7 +2,7 @@
 
 namespace Caregivers.Domains.Validations
 {
-    public class CaregiverValidation : AbstractValidator<CaregiverDomain>
+    public class CaregiverValidation : AbstractValidator<Caregiver>
     {
         public CaregiverValidation()
         {

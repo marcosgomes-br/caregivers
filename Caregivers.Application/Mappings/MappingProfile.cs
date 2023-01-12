@@ -9,10 +9,10 @@ namespace Caregivers.Application.Mappings
     {
         public MappingProfile()
         {
-            CreateMap<CaregiverDto, CaregiverDomain>()
-                .ConstructUsing(x => new CaregiverDomain(x.Id, x.FullName, x.Gender, x.Photo, x.Biography, x.Whatsapp));
+            CreateMap<CaregiverDto, Caregiver>()
+                .ConstructUsing(x => new Caregiver(x.Id, x.FullName, x.Gender, x.Photo, x.Biography, x.Whatsapp));
 
-            CreateMap<CaregiverDomain, CaregiverDto>()
+            CreateMap<Caregiver, CaregiverDto>()
                 .ConstructUsing(x => new CaregiverDto
                 {
                     Id = x.Id,
@@ -28,7 +28,7 @@ namespace Caregivers.Application.Mappings
                                                 .ToList()
                 });
 
-            CreateMap<CityDomain, CityDto>()
+            CreateMap<City, CityDto>()
                 .ForMember(x => x.Name, 
                              o => 
                                  o.MapFrom(s => $@"{s.Name} - {s.State.Name}"));

@@ -6,6 +6,6 @@ namespace Caregivers.Infra.Data.Repositories
 {
     public interface ICityRepository
     {
-        public Task<List<CityDomain>> Get();
+        public Task<List<City>> Get();
     }
 }

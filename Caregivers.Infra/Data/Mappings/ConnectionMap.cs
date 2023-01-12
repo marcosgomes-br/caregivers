@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Caregivers.Infra.Data.Mappings
 {
-    public class ConnectionMap : IEntityTypeConfiguration<ConnectionDomain>
+    public class ConnectionMap : IEntityTypeConfiguration<Connection>
     {
-        public void Configure(EntityTypeBuilder<ConnectionDomain> builder)
+        public void Configure(EntityTypeBuilder<Connection> builder)
         {
             builder.ToTable("CONNECTION");
 

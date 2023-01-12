@@ -38,10 +38,10 @@ namespace Caregivers.Application.Services
         public async Task<Guid> Save(CaregiverDto caregiver)
         {
             //var domain = mapper.Map<CuidadorDomain>(cuidador); 
-            var domain = new CaregiverDomain(caregiver.Id, caregiver.FullName, caregiver.Gender, 
+            var domain = new Caregiver(caregiver.Id, caregiver.FullName, caregiver.Gender, 
                                         caregiver.Photo, caregiver.Biography, caregiver.Whatsapp)
                 {
-                    CaregiversCities = caregiver.CitiesServed.Select(x => new CaregiverCityDomain(caregiver.Id, x.Id))
+                    CaregiversCities = caregiver.CitiesServed.Select(x => new CaregiverCity(caregiver.Id, x.Id))
                         .ToList()
                 };
             await _caregiverRepository.Save(domain);

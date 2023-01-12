@@ -5,9 +5,9 @@ using System;
 
 namespace Caregivers.Infra.Data.Mappings
 {
-    public class CityMap : IEntityTypeConfiguration<CityDomain>
+    public class CityMap : IEntityTypeConfiguration<City>
     {
-        public void Configure(EntityTypeBuilder<CityDomain> builder)
+        public void Configure(EntityTypeBuilder<City> builder)
         {
             builder.ToTable("CITY");
 
@@ -22,12 +22,12 @@ namespace Caregivers.Infra.Data.Mappings
 
             builder.HasData(new[]
             {
-                new CityDomain(new Guid("00000000-0000-0000-0000-000000000001"), "Belo Horizonte", new Guid("00000000-0000-0000-0000-000000000001")),
-                new CityDomain(new Guid("00000000-0000-0000-0000-000000000002"), "Nova Lima", new Guid("00000000-0000-0000-0000-000000000001")),
-                new CityDomain(new Guid("00000000-0000-0000-0000-000000000003"), "Divinópolis", new Guid("00000000-0000-0000-0000-000000000001")),
-                new CityDomain(new Guid("00000000-0000-0000-0000-000000000004"), "Rio Acima", new Guid("00000000-0000-0000-0000-000000000001")),
-                new CityDomain(new Guid("00000000-0000-0000-0000-000000000005"), "Ouro Preto", new Guid("00000000-0000-0000-0000-000000000001")),
-                new CityDomain(new Guid("00000000-0000-0000-0000-000000000006"), "Itabirito", new Guid("00000000-0000-0000-0000-000000000001")),
+                new City(new Guid("00000000-0000-0000-0000-000000000001"), "Belo Horizonte", new Guid("00000000-0000-0000-0000-000000000001")),
+                new City(new Guid("00000000-0000-0000-0000-000000000002"), "Nova Lima", new Guid("00000000-0000-0000-0000-000000000001")),
+                new City(new Guid("00000000-0000-0000-0000-000000000003"), "Divinópolis", new Guid("00000000-0000-0000-0000-000000000001")),
+                new City(new Guid("00000000-0000-0000-0000-000000000004"), "Rio Acima", new Guid("00000000-0000-0000-0000-000000000001")),
+                new City(new Guid("00000000-0000-0000-0000-000000000005"), "Ouro Preto", new Guid("00000000-0000-0000-0000-000000000001")),
+                new City(new Guid("00000000-0000-0000-0000-000000000006"), "Itabirito", new Guid("00000000-0000-0000-0000-000000000001")),
             });
         }
     }

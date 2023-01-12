@@ -7,9 +7,9 @@ namespace Caregivers.Infra.Data.Repositories
 {
     public interface ICaregiverRepository
     {
-        public Task<CaregiverDomain> Save(CaregiverDomain caregiver);
-        public Task<List<CaregiverDomain>> Get();
-        public Task<CaregiverDomain> Get(Guid id);
+        public Task<Caregiver> Save(Caregiver caregiver);
+        public Task<List<Caregiver>> Get();
+        public Task<Caregiver> Get(Guid id);
         public void Disable(Guid id);
     }
 }
