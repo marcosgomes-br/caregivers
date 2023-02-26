@@ -10,7 +10,7 @@ const messages = {
           altHeart: 'Coração'
         },
         caregiver: {
-          title: 'Legal! Então você quer cuidar de alguém... Entre e veja as oportunidades disponíveis.',
+          title: 'Legal! Você quer cuidar de alguém... Entre e veja as ofertas disponíveis.',
           newAccount: 'Nova Conta',
           form: {
             email: 'Email',
@@ -27,7 +27,7 @@ const messages = {
           }
         },
         caregivers: {
-          title: 'Hmm... Então você ou alguém que você ama precisa de cuidados. Vamos te ajudar a encontrar a pessoa certa!',
+          title: 'OK! Alguém que você ama precisa de cuidados. Vamos te ajudar a encontrar a pessoa certa!',
           card: {
             connections: 'Conexões realizadas: ',
             buttonContactUs: 'Entrar em contato'

@@ -30,26 +30,28 @@ function Home() {
         <img onClick={() => {alterLanguage('pt-BR')}} src={ptBr} alt="pt-BR" style={{ width: '4.3rem' }}></img>
         <img onClick={() => {alterLanguage('en-US')}} src={enUs} alt="en-US" style={{ width: '4rem' }}></img>
       </div>
-      <Container maxWidth="md">
-        <Grid container spacing={2} alignItems="center" direction="row" className="container">
-          <Grid item xs={7} style={{paddingRight: '1rem'}} className="logo-container">
-            <img src={logoImage} alt="Logo Caregivers"/>
-            <h2>{i18n.t('page.home.slogan').toString()}</h2>
+      <div className='home-container'>
+        <Container maxWidth="md">
+          <Grid container spacing={2} alignItems="center" direction="row" className="container">
+            <Grid item xs={7} style={{paddingRight: '1rem'}} className="logo-container">
+              <img src={logoImage} alt="Logo Caregivers"/>
+              <h2>{i18n.t('page.home.slogan').toString()}</h2>
+            </Grid>
+            <Grid item xs={5} className="total-connections-container">
+              <img src={heart} alt={i18n.t('page.home.altHeart')} />
+              <span className="total-connections">
+                {totalConnections} {i18n.t('page.home.connections').toString()}
+              </span>
+            </Grid>
           </Grid>
-          <Grid item xs={5} className="total-connections-container">
-            <img src={heart} alt={i18n.t('page.home.altHeart')} />
-            <span className="total-connections">
-              {totalConnections} {i18n.t('page.home.connections').toString()}
-            </span>
+          <Grid container spacing={2} className="container">
+            <Grid item xs={12} className="buttons-container">
+              <Button to="/register" icon={faHeartPulse} text={i18n.t('page.home.btnGuardiao')} />
+              <Button to="/caregivers" icon={faSearch} text={i18n.t('page.home.btnFind')} />
+            </Grid>
           </Grid>
-        </Grid>
-        <Grid container spacing={2} className="container">
-          <Grid item xs={12} className="buttons-container">
-            <Button to="/register" icon={faHeartPulse} text={i18n.t('page.home.btnGuardiao')} />
-            <Button to="/caregivers" icon={faSearch} text={i18n.t('page.home.btnFind')} />
-          </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </div>
     </div>
   );
 }

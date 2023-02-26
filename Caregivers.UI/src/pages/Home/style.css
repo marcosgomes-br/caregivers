@@ -2,7 +2,7 @@
     width: 100vw;
     min-height: 100vh;
     color: var(--cor-branco-sujo);
-    background: linear-gradient(117.21deg, var(--cor-secundaria) 0%, var(--cor-primaria) 98.92%);
+    background: var(--cor-primaria);
 }
 
 #home-page img{
@@ -10,15 +10,9 @@
     height: auto;
 }
 
-.logo-container{
-    text-align: center;
-    margin-bottom: 3.2rem;
-}
-
 .logo-container h2{
     font-weight: 500;
     font-size: 2.2rem;
-    line-height: 2.2em;
 }
 
 .buttons-container{
@@ -65,4 +59,11 @@
 
 .languages img:hover{
     box-shadow: none;
+}
+
+.home-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
