@@ -9,9 +9,9 @@ namespace Caregivers.Infra.Data.Repositories
 {
     public class CityRepository : ICityRepository
     {
-        private readonly MeuVelhoContext _context;
+        private readonly CaregiversContext _context;
 
-        public CityRepository(MeuVelhoContext context)
+        public CityRepository(CaregiversContext context)
         {
             _context = context;
         }

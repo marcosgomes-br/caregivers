@@ -8,12 +8,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Caregivers.Infra.Data.Contexts
 {
-    public class MeuVelhoContext : IdentityDbContext<User, Role, Guid, 
+    public class CaregiversContext : IdentityDbContext<User, Role, Guid, 
                                                      UserClaim, UserRole, 
                                                      Login, RoleClaim, 
                                                      UserToken>
     {
-        public MeuVelhoContext(DbContextOptions<MeuVelhoContext> options) : base(options)
+        public CaregiversContext(DbContextOptions<CaregiversContext> options) : base(options)
         {
         }
         /*

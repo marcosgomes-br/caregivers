@@ -11,9 +11,9 @@ namespace Caregivers.Infra.Data.Repositories
 {
     public class CaregiverRepository : ICaregiverRepository
     {
-        private readonly MeuVelhoContext _context;
+        private readonly CaregiversContext _context;
 
-        public CaregiverRepository(MeuVelhoContext context)
+        public CaregiverRepository(CaregiversContext context)
         {
             _context = context;
         }

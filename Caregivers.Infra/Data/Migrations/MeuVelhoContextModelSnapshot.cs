@@ -8,7 +8,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Caregivers.Infra.Data.Migrations
 {
-    [DbContext(typeof(MeuVelhoContext))]
+    [DbContext(typeof(CaregiversContext))]
     partial class MeuVelhoContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -7,9 +7,9 @@ namespace Caregivers.Infra.Data.Repositories
 {
     public class ConnectionRepository : IConnectionRepository
     {
-        private readonly MeuVelhoContext _context;
+        private readonly CaregiversContext _context;
 
-        public ConnectionRepository(MeuVelhoContext context)
+        public ConnectionRepository(CaregiversContext context)
         {
             _context = context;
         }

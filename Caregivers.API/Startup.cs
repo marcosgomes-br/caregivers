@@ -30,11 +30,11 @@ namespace Caregivers.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<MeuVelhoContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"))
+            services.AddDbContext<CaregiversContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"))
                     .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
             services.AddIdentity<User, Role>()
-                .AddEntityFrameworkStores<MeuVelhoContext>()
+                .AddEntityFrameworkStores<CaregiversContext>()
                 .AddDefaultTokenProviders();
             
             services.AddScoped<ICaregiverService, CaregiverService>();

@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Caregivers.Infra.Data.Migrations
 {
-    [DbContext(typeof(MeuVelhoContext))]
+    [DbContext(typeof(CaregiversContext))]
     [Migration("20220215124915_inicial")]
     partial class inicial
     {

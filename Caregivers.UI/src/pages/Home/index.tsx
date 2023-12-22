@@ -4,7 +4,7 @@ import './style.css';
 import logoImage from '../../assets/images/logo.svg';
 import heart from '../../assets/images/coracao.svg';
 import ptBr from '../../assets/images/pt-br.svg';
-import enUs from '../../assets/images/en-us.svg'
+import enUs from '../../assets/images/en-us.svg';
 import api from '../../services/api';
 import { Container, Grid } from '@mui/material';
 import { faSearch, faHeartPulse } from '@fortawesome/free-solid-svg-icons';
@@ -14,27 +14,55 @@ const alterLanguage = (currentLanguage: string): void => {
   window.localStorage.setItem('i18nextLng', currentLanguage);
   // eslint-disable-next-line no-self-assign
   window.location = window.location;
-}
+};
 
 function Home() {
   const [totalConnections, setTotalConnections] = useState(0);
-  useEffect(() =>{
-    api.get('contato').then(response => {
-      setTotalConnections(response.data)
+  useEffect(() => {
+    api.get('connection').then(response => {
+      setTotalConnections(response.data);
     });
   }, []);
 
   return (
     <div id="home-page">
-      <div className="languages" style={{display: 'inline', float: 'right', margin: '1rem'}}>
-        <img onClick={() => {alterLanguage('pt-BR')}} src={ptBr} alt="pt-BR" style={{ width: '4.3rem' }}></img>
-        <img onClick={() => {alterLanguage('en-US')}} src={enUs} alt="en-US" style={{ width: '4rem' }}></img>
+      <div
+        className="languages"
+        style={{ display: 'inline', float: 'right', margin: '1rem' }}
+      >
+        <img
+          onClick={() => {
+            alterLanguage('pt-BR');
+          }}
+          src={ptBr}
+          alt="pt-BR"
+          style={{ width: '4.3rem' }}
+        ></img>
+        <img
+          onClick={() => {
+            alterLanguage('en-US');
+          }}
+          src={enUs}
+          alt="en-US"
+          style={{ width: '4rem' }}
+        ></img>
       </div>
-      <div className='home-container'>
+      <div className="home-container">
         <Container maxWidth="md">
-          <Grid container spacing={2} alignItems="center" direction="row" className="container">
-            <Grid item xs={7} style={{paddingRight: '1rem'}} className="logo-container">
-              <img src={logoImage} alt="Logo Caregivers"/>
+          <Grid
+            container
+            spacing={2}
+            alignItems="center"
+            direction="row"
+            className="container"
+          >
+            <Grid
+              item
+              xs={7}
+              style={{ paddingRight: '1rem' }}
+              className="logo-container"
+            >
+              <img src={logoImage} alt="Logo Caregivers" />
               <h2>{i18n.t('page.home.slogan').toString()}</h2>
             </Grid>
             <Grid item xs={5} className="total-connections-container">
@@ -46,8 +74,16 @@ function Home() {
           </Grid>
           <Grid container spacing={2} className="container">
             <Grid item xs={12} className="buttons-container">
-              <Button to="/register" icon={faHeartPulse} text={i18n.t('page.home.btnGuardiao')} />
-              <Button to="/caregivers" icon={faSearch} text={i18n.t('page.home.btnFind')} />
+              <Button
+                to="/register"
+                icon={faHeartPulse}
+                text={i18n.t('page.home.btnGuardiao')}
+              />
+              <Button
+                to="/caregivers"
+                icon={faSearch}
+                text={i18n.t('page.home.btnFind')}
+              />
             </Grid>
           </Grid>
         </Container>
