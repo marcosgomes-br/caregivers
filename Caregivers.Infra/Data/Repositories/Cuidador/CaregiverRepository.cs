@@ -22,7 +22,7 @@ namespace Caregivers.Infra.Data.Repositories
         {
             var caregiver = _context.Caregivers.AsTracking().FirstOrDefault(x => x.Id.Equals(id));
             if (caregiver == null)
-                throw new ValidationException("Failed to deactivate, non-existent registration.");
+                throw new BusinessException("Failed to deactivate, non-existent registration.");
             caregiver.Disable();
             _context.SaveChangesAsync();
         }

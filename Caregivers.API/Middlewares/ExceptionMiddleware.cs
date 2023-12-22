@@ -32,7 +32,7 @@ namespace Caregivers.API.Middlewares
         {
             var code = HttpStatusCode.InternalServerError; // 500 if unexpected
 
-            if (exception is ValidationException) code = HttpStatusCode.BadRequest;
+            if (exception is Exception) code = HttpStatusCode.BadRequest;
 
             var result = JsonConvert.SerializeObject(new { message = exception.Message });
             context.Response.ContentType = "application/json";
